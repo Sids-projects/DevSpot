@@ -1,1 +1,146 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+html,
+body {
+  font-family: "Space Grotesk", sans-serif !important;
+}
+
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4,
+.mat-typography h5,
+.mat-typography h6,
+.mat-typography p {
+  font-family: "Space Grotesk", sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button {
+  font-family: "Space Grotesk", sans-serif !important;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.4rem !important;
+  font-weight: 700 !important;
+
+  img {
+    width: 5rem;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 4rem;
+
+  .title {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.228);
+    border-radius: 0.6rem;
+    background-color: #e5e5f7;
+    opacity: 0.5;
+    background-image: radial-gradient(circle at center center, #8185ff, #e5e5f7),
+      repeating-radial-gradient(
+        circle at center center,
+        #8185ff,
+        #8185ff,
+        10px,
+        transparent 20px,
+        transparent 10px
+      );
+    background-blend-mode: multiply;
+    position: relative;
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      text-align: center;
+      color: white;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 4rem;
+
+    a {
+      text-decoration: none;
+    }
+
+    .card-component {
+      height: 8rem;
+      background-color: white;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.228);
+      border-radius: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      position: relative;
+
+      img {
+        width: 3.8rem;
+        position: absolute;
+        top: 0;
+        right: 1.4rem;
+      }
+
+      div {
+        padding: 1.4rem 5rem 1.4rem 1.4rem;
+
+        h3 {
+          font-size: 1.6rem;
+          font-weight: 600;
+          color: rgb(33, 33, 33);
+          line-height: 2rem;
+          margin-bottom: 0.4rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+          color: rgb(96, 96, 96);
+          font-weight: 500;
+          line-height: 1.6rem;
+        }
+      }
+    }
+  }
+}
