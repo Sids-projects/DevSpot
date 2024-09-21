@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -788,5 +794,24 @@ export class AppComponent {
     },
   ];
 
-  ngOnInit() {}
+  @ViewChildren('cardScrollContainer')
+  cardScrollContainers!: QueryList<ElementRef>;
+
+  scrollLeft(index: number) {
+    const scrollContainer =
+      this.cardScrollContainers.toArray()[index].nativeElement;
+    scrollContainer.scrollBy({
+      left: -300, // Adjust as needed
+      behavior: 'smooth',
+    });
+  }
+
+  scrollRight(index: number) {
+    const scrollContainer =
+      this.cardScrollContainers.toArray()[index].nativeElement;
+    scrollContainer.scrollBy({
+      left: 300, // Adjust as needed
+      behavior: 'smooth',
+    });
+  }
 }

@@ -1,24 +1,38 @@
 <main>
-  <h2 class="logo">Book<img src="./assets/logo.svg" />arks</h2>
-  <section class="body">
-    <ng-container *ngFor="let link of propArr">
-      <div class="container">
-        <div class="title">
-          <div class="overlay"></div>
-          <h2>{{ link.value }}</h2>
+  <nav class="nav">
+    <div class="logo">
+      <img src="./assets/bookmark.svg" alt="Logo" />
+      <h2>Spot</h2>
+    </div>
+  </nav>
+  <section class="content">
+    <div class="cards" *ngFor="let link of propArr; let i = index">
+      <header class="card-header">
+        <h2>{{ link.value }}</h2>
+        <div>
+          <span class="material-symbols-outlined" (click)="scrollLeft(i)">
+            arrow_circle_left
+          </span>
+          <span class="material-symbols-outlined" (click)="scrollRight(i)">
+            arrow_circle_right
+          </span>
         </div>
+      </header>
 
-        <div class="card-component" *ngFor="let data of links[0][link.loop]">
-          <img [src]="data.img" />
-          <div>
-            <a [href]="data.link" target="_blank">
-              <h3>{{ data.title | truncate : 3 }}</h3>
-              <p>{{ data.desc | truncate : 6 }}</p>
-              <small>{{ data.link | truncate : 3 : 20 }}</small>
-            </a>
+      <div class="cards-body">
+        <div class="card-body-scroll" #cardScrollContainer>
+          <div class="card-data" *ngFor="let data of links[0][link.loop]">
+            <img [src]="data.img" />
+            <div>
+              <a [href]="data.link" target="_blank">
+                <h3>{{ data.title | truncate : 3 }}</h3>
+                <p>{{ data.desc | truncate : 6 }}</p>
+                <small>{{ data.link | truncate : 3 : 20 }}</small>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </ng-container>
+    </div>
   </section>
 </main>
