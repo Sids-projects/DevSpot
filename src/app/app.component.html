@@ -21,16 +21,19 @@
 
       <div class="cards-body">
         <div class="card-body-scroll" #cardScrollContainer>
-          <div class="card-data" *ngFor="let data of links[0][link.loop]">
+          <a
+            class="card-data"
+            [href]="data.link"
+            target="_blank"
+            *ngFor="let data of links[0][link.loop]"
+          >
             <img [src]="data.img" />
-            <div>
-              <a [href]="data.link" target="_blank">
-                <h3>{{ data.title | truncate : 3 }}</h3>
-                <p>{{ data.desc | truncate : 6 }}</p>
-                <small>{{ data.link | truncate : 3 : 20 }}</small>
-              </a>
+            <div class="set-01"></div>
+            <div class="set-02">
+              <h3>{{ data.title | truncate : 3 }}</h3>
+              <p>{{ data.desc | truncate : 6 }}</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
