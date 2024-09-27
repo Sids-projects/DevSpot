@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url(./assets/scss/variables.scss);
 
 html,
 body {
@@ -9,114 +9,62 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-html {
-  font-size: 10px;
-}
-
-body {
-  font-size: 1.6rem;
-}
-
-html,
-body {
-  font-family: "Space Grotesk", sans-serif !important;
-}
-
-.mat-typography h1,
-.mat-typography h2,
-.mat-typography h3,
-.mat-typography h4,
-.mat-typography h5,
-.mat-typography h6,
-.mat-typography p {
-  font-family: "Space Grotesk", sans-serif !important;
-  margin: 0;
-  padding: 0;
-}
-
-input,
-button {
-  font-family: "Space Grotesk", sans-serif !important;
-}
-
 main {
-  background-color: #fafafa;
-}
+  background-color: #f2f2f2;
+  height: 100vh;
+  overflow: hidden;
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-
-  .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    font-size: 2rem !important;
-    font-weight: 500 !important;
-
-    img {
-      width: 2rem;
-    }
-  }
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 1rem;
-
-  .cards {
+  header {
+    height: 14rem;
+    background-color: white;
+    border-bottom: 0.1rem solid #e1e1e1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 0 3rem;
+    z-index: 2;
 
-    .card-header {
+    .nav-01 {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      text-align: left;
-      padding: 0 3rem;
-      margin-bottom: 1rem;
+      padding-top: 1.8rem;
 
-      h2 {
-        font-size: 1.8rem;
-        font-weight: 600;
-        text-align: center;
-      }
-
-      div {
+      .logo {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         gap: 0.4rem;
+        font-size: 2rem !important;
+        font-weight: 500 !important;
 
-        span {
-          font-size: 3rem !important;
-          cursor: pointer;
+        img {
+          width: 2rem;
         }
       }
     }
 
-    .cards-body {
+    .nav-02 {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 4rem;
+      padding-bottom: 1.2rem;
 
-      a {
-        text-decoration: none;
+      span {
+        font-size: 3.4rem !important;
+        cursor: pointer;
       }
 
-      .card-body-scroll {
+      .nav-links {
         width: 100%;
         display: flex;
-        gap: 3rem;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5rem;
+        padding: 2rem 0;
         overflow-x: scroll;
         overflow-y: hidden;
-        padding: 1rem 3rem 3rem 3rem;
         scrollbar-width: none;
         -ms-overflow-style: none;
 
@@ -124,57 +72,86 @@ nav {
           display: none;
         }
 
-        .card-data {
-          width: 18rem;
-          height: 22rem;
-          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 14px 0px,
-            rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-          background-color: white;
-          border-radius: 0.6rem;
-          display: grid;
-          grid-template-rows: auto 1fr;
-          position: relative;
-          flex-shrink: 0;
-          flex-grow: 0;
-          overflow: hidden;
+        p {
+          font-size: 1.8rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.1s;
+          color: #656565;
+        }
 
-          img {
-            width: 2.4rem;
-            position: absolute;
-            top: 0;
-            right: 1.4rem;
+        .active-menu {
+          font-size: 2.8rem;
+          font-weight: 800;
+          color: black !important;
+        }
+      }
+    }
+  }
+
+  .content {
+    box-sizing: border-box;
+    height: calc(100vh - 14rem);
+    overflow-y: scroll;
+
+    .card-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 18rem);
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      padding: 4rem;
+
+      .card-view {
+        text-decoration: none;
+        height: 22rem;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 14px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        background-color: white;
+        border-radius: 0.6rem;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        position: relative;
+        flex-shrink: 0;
+        flex-grow: 0;
+        overflow: hidden;
+
+        img {
+          width: 2.4rem;
+          position: absolute;
+          top: 0;
+          right: 1.4rem;
+        }
+
+        .set-01 {
+          background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px),
+            radial-gradient(#ffffff 0.5px, #656cf1c9 0.5px);
+          background-size: 20px 20px;
+          background-position: 0 0, 10px 10px;
+          background-size: 10px 10px;
+          height: 12rem;
+        }
+
+        .set-02 {
+          padding: 1.4rem 5rem 1.4rem 1.4rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+
+          h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: rgb(33, 33, 33);
+            line-height: 2rem;
+            margin-bottom: 0.4rem;
           }
 
-          .set-01 {
-            background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px),
-              radial-gradient(#ffffff 0.5px, #656cf1c9 0.5px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-            background-size: 10px 10px;
-            height: 12rem;
-          }
-
-          .set-02 {
-            padding: 1.4rem 5rem 1.4rem 1.4rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-
-            h3 {
-              font-size: 1.6rem;
-              font-weight: 600;
-              color: rgb(33, 33, 33);
-              line-height: 2rem;
-              margin-bottom: 0.4rem;
-            }
-
-            p {
-              font-size: 1.2rem;
-              color: rgb(96, 96, 96);
-              font-weight: 500;
-              line-height: 1.6rem;
-            }
+          p {
+            font-size: 1.2rem;
+            color: rgb(96, 96, 96);
+            font-weight: 500;
+            line-height: 1.6rem;
           }
         }
       }

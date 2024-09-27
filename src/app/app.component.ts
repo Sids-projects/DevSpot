@@ -793,9 +793,11 @@ export class AppComponent {
       ],
     },
   ];
+  menuName: string = 'Vector';
 
   @ViewChildren('cardScrollContainer')
   cardScrollContainers!: QueryList<ElementRef>;
+  @ViewChild('navLinks') navLinks!: ElementRef;
 
   scrollLeft(index: number) {
     const scrollContainer =
@@ -813,5 +815,23 @@ export class AppComponent {
       left: 300, // Adjust as needed
       behavior: 'smooth',
     });
+  }
+
+  scrollNavLeft() {
+    this.navLinks.nativeElement.scrollBy({
+      left: -100,
+      behavior: 'smooth',
+    });
+  }
+
+  scrollNavRight() {
+    this.navLinks.nativeElement.scrollBy({
+      left: 100,
+      behavior: 'smooth',
+    });
+  }
+
+  menuSelected(param: any) {
+    this.menuName = param;
   }
 }
