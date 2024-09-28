@@ -24,8 +24,6 @@ export class AppComponent {
   portfolioContent: any[] = [];
   cardTwoActive: boolean = false;
   cardThreeActive: boolean = false;
-
-  // If's
   portfolioMainIf: boolean = true;
   soleJourneyMainIf: boolean = false;
 
@@ -35,10 +33,5 @@ export class AppComponent {
 
   cardThree() {
     this.cardThreeActive = !this.cardThreeActive;
-  }
-
-  soleJourneyIf() {
-    this.portfolioMainIf = false;
-    this.soleJourneyMainIf = true;
   }
 }

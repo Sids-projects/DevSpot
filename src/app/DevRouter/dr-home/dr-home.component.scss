@@ -115,6 +115,8 @@ main {
         flex-shrink: 0;
         flex-grow: 0;
         overflow: hidden;
+        scale: 0;
+        animation: cardAnimation 1s ease forwards;
 
         img {
           width: 2.4rem;
@@ -156,5 +158,17 @@ main {
         }
       }
     }
+  }
+}
+
+@keyframes cardAnimation {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 1.05;
+  }
+  100% {
+    scale: 1;
   }
 }

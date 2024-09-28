@@ -1,3 +1,12 @@
+@import url(./../assets/Font/Tanker/Fonts/css/tanker.css);
+@import url(./../assets/Font/Satoshi/css/satoshi.css);
+
+p,
+ul,
+ol {
+  font-family: "Satoshi-medium" !important;
+}
+
 .portfolio {
   width: 100%;
   height: 100dvh;
@@ -5,17 +14,19 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  color: rgb(68, 68, 68);
+  color: #444444;
   position: relative;
   background-color: #fafafa;
 
   .card_view {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.212);
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border: 0.1rem solid rgb(233, 233, 233);
     background-color: white;
-    width: 310px;
-    height: 390px;
-    border-radius: 24px;
-    padding: 20px;
+    width: 31rem;
+    height: 39rem;
+    border-radius: 1.4rem;
+    padding: 1.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,13 +37,8 @@
       justify-content: flex-start;
       gap: 6px;
 
-      p {
-        font-size: 12px;
-        font-weight: 700;
-      }
-
-      i {
-        font-size: 14px;
+      img {
+        width: 3.4rem;
       }
     }
 
@@ -45,54 +51,71 @@
     .content_1 {
       display: flex;
       flex-direction: column;
-      margin-top: 20px;
+      margin-top: 1.8rem;
+      cursor: pointer;
 
-      h3 {
-        font-size: 14px;
+      .sub-title {
+        font-size: 1.6rem;
         font-weight: 800;
         color: #838ff7;
         letter-spacing: 1px;
-        margin-top: 8px;
+        margin-bottom: 1.6rem;
         line-height: 18px;
       }
 
-      h4 {
-        font-size: 28px;
-        font-weight: 900;
-        line-height: 32px;
-        color: rgb(43, 43, 43);
-        letter-spacing: 1px;
+      .title {
+        font-family: "Tanker-Regular";
+        font-size: 5.4rem !important;
+        text-transform: uppercase;
+        color: #2b2b2b;
+        letter-spacing: 0.2rem;
+
+        small {
+          font-size: 3rem;
+        }
       }
 
-      p {
-        font-size: 14px;
-        font-weight: 600;
+      .desc {
+        font-size: 1.4rem;
         color: #858585;
-        margin-top: 4px !important;
+        margin-top: 1.8rem !important;
+      }
+
+      .line {
+        width: 5rem;
+        height: 0.6rem;
+        background-color: #838ff7;
+        border-radius: 5rem;
+        margin-top: 0.8rem;
       }
     }
 
     .content_2 {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      margin-top: 6px;
+      margin-top: 3rem;
 
-      li {
-        width: 100%;
-        background-color: #838ff7;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 22px;
-        letter-spacing: 0.5px;
-        border-radius: 50px;
-        padding: 1px 10px !important;
-        color: white;
-        position: relative;
-        z-index: 1;
+      .sub-title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #838ff7;
+        letter-spacing: 1px;
+        margin-bottom: 1.4rem;
+        line-height: 18px;
+      }
+
+      .title {
+        font-family: "Tanker-Regular";
+        font-size: 5.8rem !important;
+        text-transform: uppercase;
+        color: #2b2b2b;
+        letter-spacing: 0.2rem;
+      }
+
+      .desc {
+        font-size: 1.4rem;
+        color: #858585;
+        margin-top: 1.8rem !important;
       }
     }
 
@@ -199,12 +222,15 @@
     }
 
     button {
+      font-family: "Tanker-Regular";
       width: 100%;
-      padding: 8px;
-      border-radius: 50px;
+      padding: 1rem 0;
+      border-radius: 0.6rem;
       border: none;
       font-weight: 600;
       letter-spacing: 1px;
+      font-size: 1.8rem;
+      text-transform: uppercase;
     }
   }
 

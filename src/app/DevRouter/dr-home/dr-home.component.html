@@ -36,7 +36,8 @@
           class="card-view"
           [href]="data.link"
           target="_blank"
-          *ngFor="let data of links[0][link.loop]"
+          *ngFor="let data of links[0][link.loop]; let i = index"
+          [ngStyle]="{ 'animation-delay': i * 0.2 + 's' }"
         >
           <img [src]="data.img" />
           <div class="set-01"></div>

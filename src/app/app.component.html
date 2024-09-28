@@ -1,21 +1,18 @@
 @if (showNav) {
 <main class="portfolio">
-  <section class="overlay"></section>
-
   <section class="card_view card_1">
     <div>
       <header>
-        <i class="fa-solid fa-face-grin-wide"></i>
-        <p>About</p>
+        <img src="./../assets/Portfolio/Portfolio.svg" />
       </header>
       <div class="content_1">
-        <img src="./assets/Portfolio/bitmap.png" class="profile_pic" />
-        <h3>Siddarth.G</h3>
-        <h4>Portfolio</h4>
-        <p>Frontend Web Developer & Ui / Ux</p>
+        <!-- <img src="./assets/Portfolio/bitmap.png" class="profile_pic" /> -->
+        <p class="sub-title">Siddarth.G</p>
+        <h2 class="title">Portfolio</h2>
+        <p class="desc">Frontend Developer | Ui/Ux</p>
       </div>
     </div>
-    <button>View all</button>
+    <button type="button">More</button>
   </section>
 
   <section
@@ -25,13 +22,20 @@
   >
     <div>
       <header>
-        <i class="fa-solid fa-graduation-cap"></i>
-        <p>DevRouter</p>
+        <img src="./../assets/Portfolio/DevRouter.svg" />
       </header>
-      <div>
-        <a routerLink="DevRouter" (click)="navigate()">DevRouter</a>
+      <div class="content_1">
+        <p class="sub-title">Bookmarks</p>
+        <h2 class="title">Dev<small>_</small>Router</h2>
+        <!-- <span class="line"></span> -->
+        <p class="desc">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
+          assumenda rem recusandae qui nobis quae asperiores aut esse, mollitia
+          neque!
+        </p>
       </div>
     </div>
+    <button routerLink="DevRouter" (click)="navigate()">Route</button>
   </section>
 
   <section
@@ -41,14 +45,19 @@
   >
     <div>
       <header>
-        <i class="fa-solid fa-graduation-cap"></i>
-        <p>CSSGenie</p>
+        <img src="./../assets/Portfolio/CSSGenie.svg" />
       </header>
-      <div class="content_4">
-        <a routerLink="CGHome" (click)="navigate()">CSSGenie</a>
+      <div class="content_1">
+        <p class="sub-title">Components</p>
+        <h2 class="title">CSS<small>_</small>Genie</h2>
+        <!-- <span class="line"></span> -->
+        <p class="desc">
+          CSSGenie is your creative buddy for crafting personalised, responsive
+          CSS components, simplifying the process and letting the magic happen!
+        </p>
       </div>
     </div>
-    <button>Certificates</button>
+    <button routerLink="CGHome" (click)="navigate()">Design</button>
   </section>
 </main>
 } @else {
