@@ -1,53 +1,56 @@
-<main>
-  <header>
-    <nav class="nav-01">
-      <div class="logo">
-        <img src="./assets/bookmark.svg" alt="Logo" />
-        <h2>Spot</h2>
-      </div>
-    </nav>
+@if (showNav) {
+<main class="portfolio">
+  <section class="overlay"></section>
 
-    <nav class="nav-02">
-      <span class="material-symbols-outlined" (click)="scrollNavLeft()">
-        arrow_circle_left
-      </span>
-      <div class="nav-links" #navLinks>
-        @for (item of propArr; track $index) {
-        <p
-          (click)="menuSelected(item.value)"
-          [ngClass]="menuName === item.value ? 'active-menu' : ''"
-        >
-          {{ item.value }}
-        </p>
-        }
+  <section class="card_view card_1">
+    <div>
+      <header>
+        <i class="fa-solid fa-face-grin-wide"></i>
+        <p>About</p>
+      </header>
+      <div class="content_1">
+        <img src="./assets/Portfolio/bitmap.png" class="profile_pic" />
+        <h3>Siddarth.G</h3>
+        <h4>Portfolio</h4>
+        <p>Frontend Web Developer & Ui / Ux</p>
       </div>
-      <span class="material-symbols-outlined" (click)="scrollNavRight()">
-        arrow_circle_right
-      </span>
-    </nav>
-  </header>
+    </div>
+    <button>View all</button>
+  </section>
 
-  <section class="content">
-    @for (link of propArr; track $index) {
-    <ng-container>
-      @if (link.value === menuName) {
-      <div class="card-box">
-        <a
-          class="card-view"
-          [href]="data.link"
-          target="_blank"
-          *ngFor="let data of links[0][link.loop]"
-        >
-          <img [src]="data.img" />
-          <div class="set-01"></div>
-          <div class="set-02">
-            <h3>{{ data.title | truncate : 3 }}</h3>
-            <p>{{ data.desc | truncate : 6 }}</p>
-          </div>
-        </a>
+  <section
+    class="card_view"
+    [ngClass]="{ card_2_active: cardTwoActive, card_2: !cardTwoActive }"
+    (click)="cardTwo()"
+  >
+    <div>
+      <header>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <p>DevRouter</p>
+      </header>
+      <div>
+        <a routerLink="DevRouter" (click)="navigate()">DevRouter</a>
       </div>
-      }
-    </ng-container>
-    }
+    </div>
+  </section>
+
+  <section
+    class="card_view"
+    [ngClass]="{ card_3_active: cardThreeActive, card_3: !cardThreeActive }"
+    (click)="cardThree()"
+  >
+    <div>
+      <header>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <p>CSSGenie</p>
+      </header>
+      <div class="content_4">
+        <a routerLink="CGHome" (click)="navigate()">CSSGenie</a>
+      </div>
+    </div>
+    <button>Certificates</button>
   </section>
 </main>
+} @else {
+<router-outlet></router-outlet>
+}

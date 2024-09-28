@@ -1,0 +1,53 @@
+<main>
+  <header>
+    <nav class="nav-01">
+      <div class="logo">
+        <img src="./assets/DevRouter/bookmark.svg" alt="Logo" />
+        <h2>Spot</h2>
+      </div>
+    </nav>
+
+    <nav class="nav-02">
+      <span class="material-symbols-outlined" (click)="scrollNavLeft()">
+        arrow_circle_left
+      </span>
+      <div class="nav-links" #navLinks>
+        @for (item of propArr; track $index) {
+        <p
+          (click)="menuSelected(item.value)"
+          [ngClass]="menuName === item.value ? 'active-menu' : ''"
+        >
+          {{ item.value }}
+        </p>
+        }
+      </div>
+      <span class="material-symbols-outlined" (click)="scrollNavRight()">
+        arrow_circle_right
+      </span>
+    </nav>
+  </header>
+
+  <section class="content">
+    @for (link of propArr; track $index) {
+    <ng-container>
+      @if (link.value === menuName) {
+      <div class="card-box">
+        <a
+          class="card-view"
+          [href]="data.link"
+          target="_blank"
+          *ngFor="let data of links[0][link.loop]"
+        >
+          <img [src]="data.img" />
+          <div class="set-01"></div>
+          <div class="set-02">
+            <h3>{{ data.title | truncate : 3 }}</h3>
+            <p>{{ data.desc | truncate : 6 }}</p>
+          </div>
+        </a>
+      </div>
+      }
+    </ng-container>
+    }
+  </section>
+</main>
