@@ -1,60 +1,92 @@
 @if (showNav) {
 <main class="portfolio">
-  <section class="card_view card_1">
+  <section
+    class="cards"
+    [ngClass]="{
+      'card-1': !cardOneActive,
+      'active-1': cardOneActive
+    }"
+    (click)="cardOne()"
+  >
     <div>
       <header>
         <img src="./assets/Portfolio/Portfolio.svg" />
       </header>
-      <div class="content_1">
-        <!-- <img src="./assets/Portfolio/bitmap.png" class="profile_pic" /> -->
+      <div class="content">
         <p class="sub-title">Siddarth.G</p>
         <h2 class="title">Portfolio</h2>
         <p class="desc">Frontend Developer | Ui/Ux</p>
+        <div class="summary">
+          <h3>About</h3>
+          <p>
+            Skilled in languages and tools like HTML5, CSS3, JavaScript,
+            Angular, Figma, Illustrator, Photoshop, PowerPoint, and Inkscape.
+          </p>
+        </div>
       </div>
     </div>
-    <button type="button">More</button>
+    <div class="btn-div">
+      <a href="https://www.instagram.com/_dev.spot/" target="_blank">
+        Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/mrsiddarth/" target="_blank"
+        >Linkedin</a
+      >
+    </div>
   </section>
 
   <section
-    class="card_view"
-    [ngClass]="{ card_2_active: cardTwoActive, card_2: !cardTwoActive }"
+    class="cards"
+    [ngClass]="{
+      'card-2 shuffled-card': !cardTwoActive,
+      'active-2 active-card': cardTwoActive
+    }"
     (click)="cardTwo()"
   >
     <div>
       <header>
         <img src="./assets/Portfolio/DevRouter.svg" />
       </header>
-      <div class="content_1">
+      <div class="content">
         <p class="sub-title">Bookmarks</p>
         <h2 class="title">Dev<small>_</small>Router</h2>
-        <!-- <span class="line"></span> -->
         <p class="desc">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
-          assumenda rem recusandae qui nobis quae asperiores aut esse, mollitia
-          neque!
+          DevRouter is a resource hub for frontend developers, providing quick
+          access to essential tools and references.
         </p>
+        <ul class="points">
+          <li>Programming notes for developers</li>
+          <li>Website links organized like bookmarks</li>
+          <li>More features to be added soon</li>
+        </ul>
       </div>
     </div>
     <button routerLink="DevRouter" (click)="navigate()">Route</button>
   </section>
 
   <section
-    class="card_view"
-    [ngClass]="{ card_3_active: cardThreeActive, card_3: !cardThreeActive }"
+    class="cards"
+    [ngClass]="{
+      'card-3 shuffled-card': !cardThreeActive,
+      'active-3 active-card': cardThreeActive
+    }"
     (click)="cardThree()"
   >
     <div>
       <header>
         <img src="./assets/Portfolio/CSSGenie.svg" />
       </header>
-      <div class="content_1">
-        <p class="sub-title">Components</p>
+      <div class="content">
+        <p class="sub-title">Ui Components</p>
         <h2 class="title">CSS<small>_</small>Genie</h2>
-        <!-- <span class="line"></span> -->
         <p class="desc">
-          CSSGenie is your creative buddy for crafting personalised, responsive
-          CSS components, simplifying the process and letting the magic happen!
+          CSSGenie helps you quickly style responsive HTML elements with ease
+          and creativity.
         </p>
+        <ul class="points">
+          <li>Effortlessly style HTML elements with built-in tools</li>
+          <li>Personalize components without coding</li>
+        </ul>
       </div>
     </div>
     <button routerLink="CGHome" (click)="navigate()">Design</button>

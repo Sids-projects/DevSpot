@@ -22,10 +22,15 @@ export class AppComponent {
   }
 
   portfolioContent: any[] = [];
+  cardOneActive: boolean = false;
   cardTwoActive: boolean = false;
   cardThreeActive: boolean = false;
   portfolioMainIf: boolean = true;
   soleJourneyMainIf: boolean = false;
+
+  cardOne() {
+    this.cardOneActive = !this.cardOneActive;
+  }
 
   cardTwo() {
     this.cardTwoActive = !this.cardTwoActive;
