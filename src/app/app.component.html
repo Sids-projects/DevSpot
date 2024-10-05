@@ -1,95 +1,240 @@
 @if (showNav) {
 <main class="portfolio">
   <section
-    class="cards"
-    [ngClass]="{
-      'card-1': !cardOneActive,
-      'active-1': cardOneActive
-    }"
+    class="card-1"
     (click)="cardOne()"
+    [ngStyle]="{
+      width: cardOneActive ? 'calc(31rem * 2)' : '31rem',
+      'grid-template-columns': cardOneActive ? '1fr 1fr' : '1fr'
+    }"
   >
-    <div>
-      <header>
-        <img src="./assets/Portfolio/Portfolio.svg" />
-      </header>
+    <div class="card-front">
+      <img
+        src="./assets/Portfolio/Card_1/Leaf.svg"
+        class="leaf01 bg-img"
+        alt="Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf.svg"
+        class="leaf02 bg-img"
+        alt="Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf.svg"
+        class="leaf03 bg-img"
+        alt="Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf.svg"
+        class="leaf04 bg-img"
+        alt="Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf_group01.svg"
+        class="grupLeaf01 bg-img"
+        alt="Group Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf_group02.svg"
+        class="grupLeaf02 bg-img"
+        alt="Group Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Mountain.svg"
+        class="mountain bg-img"
+        alt="Mountain"
+      />
       <div class="content">
-        <p class="sub-title">Siddarth.G</p>
-        <h2 class="title">Portfolio</h2>
-        <p class="desc">Frontend Developer | Ui/Ux</p>
-        <div class="summary">
-          <h3>About</h3>
-          <p>
-            Skilled in languages and tools like HTML5, CSS3, JavaScript,
-            Angular, Figma, Illustrator, Photoshop, PowerPoint, and Inkscape.
-          </p>
-        </div>
+        <img src="./assets/Portfolio/Card_1/main.svg" alt="Yoga Vector" />
+        <h2>Portfolio</h2>
       </div>
     </div>
-    <div class="btn-div">
-      <a href="https://www.instagram.com/_dev.spot/" target="_blank">
-        Instagram
-      </a>
-      <a href="https://www.linkedin.com/in/mrsiddarth/" target="_blank"
-        >Linkedin</a
-      >
+    @if (cardOneActive) {
+    <div class="card-back">
+      <header>
+        <h2>Portfolio</h2>
+        <small>Frontend Developer | Ui/Ux</small>
+      </header>
+      <div class="content">
+        <h3>About</h3>
+        <p>
+          Skilled in languages and tools like HTML5, CSS3, JavaScript, Angular,
+          Figma, Illustrator, Photoshop, PowerPoint, and Inkscape.
+        </p>
+        <ul>
+          <li>
+            <img src="./assets/Portfolio/Card_1/insta.svg" alt="Insta Icon" />
+            ._devspot
+          </li>
+          <li>
+            <img
+              src="./assets/Portfolio/Card_1/Linkedin.svg"
+              alt="Linkedin Icon"
+            />
+            siddarthg.dev&#64;gmail.com
+          </li>
+        </ul>
+      </div>
     </div>
+    }
   </section>
 
   <section
-    class="cards"
+    class="card-2"
     [ngClass]="{
-      'card-2 shuffled-card': !cardTwoActive,
-      'active-2 active-card': cardTwoActive
+      'inactive-card02': !cardTwoActive,
+      'active-2': cardTwoActive
+    }"
+    [ngStyle]="{
+      width: cardTwoActive ? 'calc(31rem * 2)' : '31rem',
+      'grid-template-columns': cardTwoActive ? '1fr 1fr' : '1fr'
     }"
     (click)="cardTwo()"
   >
-    <div>
-      <header>
-        <img src="./assets/Portfolio/DevRouter.svg" />
-      </header>
+    <div class="card-front">
+      <img
+        src="./../assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball01 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball02 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball03 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball04 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball05 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball06 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/Yellow_ball.svg"
+        class="yellow-ball bg-img"
+        alt="Paint Vector"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/Gray_paste.svg"
+        class="gray-paste01 bg-img"
+        alt="Gray Paste"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/Yellow_paste.svg"
+        class="yellow-paste01 bg-img"
+        alt="Yellow Paste"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/Gray_paste.svg"
+        class="gray-paste02 bg-img"
+        alt="Gray Paste"
+      />
+      <img
+        src="./../assets/Portfolio/Card_2/Yellow_paste.svg"
+        class="yellow-paste02 bg-img"
+        alt="Yellow Paste"
+      />
+
       <div class="content">
-        <p class="sub-title">Bookmarks</p>
-        <h2 class="title">Dev<small>_</small>Router</h2>
-        <p class="desc">
-          DevRouter is a resource hub for frontend developers, providing quick
-          access to essential tools and references.
-        </p>
-        <ul class="points">
-          <li>Programming notes for developers</li>
-          <li>Website links organized like bookmarks</li>
-          <li>More features to be added soon</li>
-        </ul>
+        <img src="./assets/Portfolio/Card_2/main.svg" alt="Yoga Vector" />
+        <h2>CSS_Genie</h2>
       </div>
     </div>
-    <button routerLink="DevRouter" (click)="navigate()">Route</button>
+    @if (cardTwoActive) {
+    <div class="card-back">
+      <header>
+        <h2>Css_Genie</h2>
+        <small>Ui Components</small>
+      </header>
+      <div class="content">
+        <h3>About</h3>
+        <p>
+          CSSGenie helps you quickly style responsive HTML elements with ease
+          and creativity. Effortlessly style HTML elements with built-in tools
+          Personalize components without coding
+        </p>
+        <a routerLink="CGHome"
+          >Design
+          <span class="material-symbols-outlined"> arrow_forward </span></a
+        >
+      </div>
+    </div>
+    }
   </section>
 
   <section
-    class="cards"
+    class="card-3"
     [ngClass]="{
-      'card-3 shuffled-card': !cardThreeActive,
-      'active-3 active-card': cardThreeActive
+      'inactive-card03': !cardThreeActive,
+      'active-3': cardThreeActive
+    }"
+    [ngStyle]="{
+      width: cardThreeActive ? 'calc(31rem * 2)' : '31rem',
+      'grid-template-columns': cardThreeActive ? '1fr 1fr' : '1fr'
     }"
     (click)="cardThree()"
   >
-    <div>
-      <header>
-        <img src="./assets/Portfolio/CSSGenie.svg" />
-      </header>
+    <div class="card-front">
+      <img
+        src="./assets/Portfolio/Card_3/ground_left.svg"
+        class="ground-left bg-img"
+        alt="Ground left"
+      />
+      <img
+        src="./../assets/Portfolio/Card_3/pin.svg"
+        class="pin01 bg-img"
+        alt="Pin"
+      />
+      <img
+        src="./../assets/Portfolio/Card_3/pin.svg"
+        class="pin02 bg-img"
+        alt="Pin"
+      />
+      <img
+        src="./../assets/Portfolio/Card_3/pin.svg"
+        class="pin03 bg-img"
+        alt="Pin"
+      />
       <div class="content">
-        <p class="sub-title">Ui Components</p>
-        <h2 class="title">CSS<small>_</small>Genie</h2>
-        <p class="desc">
-          CSSGenie helps you quickly style responsive HTML elements with ease
-          and creativity.
-        </p>
-        <ul class="points">
-          <li>Effortlessly style HTML elements with built-in tools</li>
-          <li>Personalize components without coding</li>
-        </ul>
+        <img
+          src="./assets/Portfolio/Card_3/main.svg"
+          alt="Pin Holding Vector"
+        />
+        <h2>Portfolio</h2>
       </div>
     </div>
-    <button routerLink="CGHome" (click)="navigate()">Design</button>
+    @if (cardThreeActive) {
+    <div class="card-back">
+      <header>
+        <h2>Dev_Router</h2>
+        <small>Bookmarks</small>
+      </header>
+      <div class="content">
+        <h3>About</h3>
+        <p>
+          DevRouter is a resource hub for frontend developers, providing quick
+          access to essential tools and references.
+        </p>
+        <a routerLink="DevRouter"
+          >Route
+          <span class="material-symbols-outlined"> arrow_forward </span></a
+        >
+      </div>
+    </div>
+    }
   </section>
 </main>
 } @else {

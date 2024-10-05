@@ -3,8 +3,19 @@
 
 p,
 ul,
-ol {
-  font-family: "Satoshi-medium" !important;
+ol,
+small,
+a {
+  font-family: "Satoshi-medium";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Tanker-Regular";
 }
 
 .portfolio {
@@ -16,182 +27,542 @@ ol {
   position: relative;
   color: #444444;
   position: relative;
-  background-color: white;
+  background-color: #e2e2e2;
 
-  .cards {
+  .card-1 {
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
       rgba(17, 17, 26, 0.1) 0px 0px 8px;
-    border: 0.1rem solid rgb(233, 233, 233);
+    border: 0.1rem solid #e9e9e9;
     background-color: white;
-    width: 31rem;
     height: 42rem;
     border-radius: 1.4rem;
-    padding: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.5s;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    overflow: hidden;
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 6px;
+    .card-front {
+      height: 100%;
+      position: relative;
+      padding: 1.8rem;
+      margin-right: 1rem;
 
-      img {
-        width: 3.4rem;
+      .bg-img {
+        position: absolute;
+      }
+
+      .leaf01 {
+        transform: scaleX(-1);
+        top: 2rem;
+        left: 2rem;
+      }
+
+      .leaf02 {
+        top: 10rem;
+        right: 4rem;
+      }
+
+      .leaf03 {
+        transform: scaleX(-1);
+        top: 14rem;
+        left: 4.5rem;
+      }
+
+      .leaf04 {
+        top: 2rem;
+        right: 2rem;
+      }
+
+      .grupLeaf01 {
+        width: 16rem;
+        right: 2rem;
+        bottom: 3rem;
+        z-index: 2;
+      }
+
+      .grupLeaf02 {
+        width: 7rem;
+        left: 2rem;
+        bottom: 0;
+        z-index: 2;
+      }
+
+      .mountain {
+        width: 100%;
+        top: 5rem;
+        left: 0;
+        z-index: -1;
+      }
+
+      .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 1;
+
+        img {
+          width: 14rem;
+          animation-name: main-animation;
+          animation-duration: 0.8s;
+          animation-play-state: running;
+          animation-direction: alternate;
+          animation-iteration-count: infinite;
+        }
+
+        @keyframes main-animation {
+          0% {
+            transform: translateY(0%);
+          }
+          100% {
+            transform: translateY(-4%);
+          }
+        }
+
+        h2 {
+          font-family: "Tanker-Regular";
+          font-size: 6rem;
+        }
       }
     }
 
-    .profile_pic {
-      max-width: 130px;
-      width: 100%;
-      margin-bottom: 8px;
-    }
+    .card-back {
+      position: relative;
+      height: 100%;
+      padding: 2rem 2rem 2rem 2.8rem;
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      margin-top: 1.8rem;
-      cursor: pointer;
-
-      .sub-title {
-        font-size: 1.6rem;
-        font-weight: 800;
-        color: #838ff7;
-        letter-spacing: 1px;
-        margin-bottom: 1.6rem;
-        line-height: 18px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0.2rem;
+        height: 80%;
+        background-color: #eaeaea;
+        transform: translateY(-50%);
       }
 
-      .title {
-        font-family: "Tanker-Regular";
-        font-size: 5.4rem !important;
-        text-transform: uppercase;
-        color: #2b2b2b;
-        letter-spacing: 0.2rem;
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 1rem;
+
+        h2 {
+          font-size: 2.8rem;
+        }
 
         small {
-          font-size: 3rem;
+          font-size: 1.4rem;
+          color: #9a9a9a;
         }
       }
 
-      .desc {
-        font-size: 1.4rem;
-        color: #858585;
-        margin-top: 1rem !important;
-        margin-bottom: 0.2rem;
-      }
-
-      .line {
-        width: 5rem;
-        height: 0.6rem;
-        background-color: #838ff7;
-        border-radius: 5rem;
-        margin-top: 0.8rem;
-      }
-
-      .summary {
-        margin-top: 1.4rem;
+      .content {
+        margin-top: 4rem;
 
         h3 {
-          font-family: "Tanker-Regular";
           font-size: 2.4rem;
-          letter-spacing: 0.1rem;
-          text-transform: uppercase;
-          color: #2b2b2b;
+          margin-bottom: 0.4rem;
         }
 
         p {
           font-size: 1.4rem;
-          color: #858585;
-          margin-top: 0.4rem !important;
-          margin-bottom: 0.2rem;
+          color: #9a9a9a;
+          line-height: 2.2rem;
+        }
+
+        ul {
+          margin-top: 2rem;
+          list-style: none;
+          line-height: 3rem;
+          color: #9a9a9a;
+
+          li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.6rem;
+
+            img {
+              width: 2rem;
+            }
+          }
         }
       }
-
-      .points {
-        margin-left: 1.4rem;
-        margin-top: 0.6rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-        list-style: circle;
-        color: #858585;
-      }
     }
-
-    .btn-div {
-      display: flex;
-      gap: 1rem;
-    }
-
-    button,
-    a {
-      font-family: "Tanker-Regular";
-      text-decoration: none;
-      width: 100%;
-      padding: 1rem 0;
-      border-radius: 0.6rem;
-      border: none;
-      font-weight: 600;
-      letter-spacing: 1px;
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      text-align: center;
-      color: #2b2b2b;
-      background-color: #efefef;
-    }
-  }
-
-  .shuffled-card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transition: all 0.2s;
-  }
-
-  .card-1 {
-    z-index: 5;
-    transform: scale(1);
   }
 
   .card-2 {
-    z-index: 2;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border: 0.1rem solid #e9e9e9;
+    background-color: white;
+    width: 31rem;
+    height: 42rem;
+    border-radius: 1.4rem;
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-74%, -62%) rotate(-7deg);
+    transition: all 0.2s;
+    z-index: 2;
 
+    .card-front {
+      height: 100%;
+      position: relative;
+      padding: 1.8rem;
+      margin-right: 1rem;
+
+      .bg-img {
+        position: absolute;
+      }
+
+      .gray-paste01 {
+        transform: scaleX(-1);
+        width: 2.4rem;
+        top: 2rem;
+        right: 4rem;
+      }
+
+      .gray-paste02 {
+        transform: scaleX(-1);
+        width: 2.4rem;
+        bottom: 2rem;
+        left: 4rem;
+      }
+
+      .yellow-paste01 {
+        transform: rotate(180deg) scaleX(-1);
+        width: 4.8rem;
+        top: 2rem;
+        left: 2.4rem;
+      }
+
+      .yellow-paste02 {
+        transform: scaleX(-1);
+        width: 4.8rem;
+        bottom: 3.6rem;
+        right: 2.4rem;
+      }
+
+      .gray-ball01 {
+        top: 7%;
+        right: 30%;
+      }
+
+      .gray-ball02 {
+        top: 30%;
+        left: 10%;
+      }
+
+      .gray-ball03 {
+        top: 34%;
+        left: 25%;
+        scale: 0.6;
+      }
+
+      .gray-ball04 {
+        top: 40%;
+        right: 18%;
+      }
+
+      .gray-ball05 {
+        top: 28%;
+        right: 10%;
+        scale: 0.6;
+      }
+
+      .gray-ball06 {
+        bottom: 7%;
+        left: 30%;
+      }
+
+      .yellow-ball {
+        top: 24%;
+        left: 21%;
+        scale: 0.7;
+      }
+
+      .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 1;
+
+        img {
+          width: 24rem;
+          animation-name: main-animation;
+          animation-duration: 0.8s;
+          animation-play-state: running;
+          animation-direction: alternate;
+          animation-iteration-count: infinite;
+        }
+
+        @keyframes main-animation {
+          0% {
+            transform: translateY(0%);
+          }
+          100% {
+            transform: translateY(-4%);
+          }
+        }
+
+        h2 {
+          font-size: 6rem;
+        }
+      }
+    }
+
+    .card-back {
+      position: relative;
+      height: 100%;
+      padding: 2rem 2rem 2rem 2.8rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0.2rem;
+        height: 80%;
+        background-color: #eaeaea;
+        transform: translateY(-50%);
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 1rem;
+
+        h2 {
+          font-size: 2.8rem;
+        }
+
+        small {
+          font-size: 1.4rem;
+          color: #9a9a9a;
+        }
+      }
+
+      .content {
+        margin-top: 4rem;
+
+        h3 {
+          font-size: 2.4rem;
+          margin-bottom: 0.4rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+          color: #9a9a9a;
+          line-height: 2.2rem;
+        }
+
+        a {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0.6rem;
+          margin-top: 1rem;
+          font-weight: 500;
+          color: #e4cc60;
+          font-size: 1.6rem;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+  }
+
+  .card-3 {
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border: 0.1rem solid #e9e9e9;
+    background-color: white;
+    width: 31rem;
+    height: 42rem;
+    border-radius: 1.4rem;
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transition: all 0.1s;
+    transform: translate(-26%, -62%) rotate(7deg);
+    overflow: hidden;
+
+    .card-front {
+      height: 100%;
+      position: relative;
+      padding: 1.8rem;
+
+      .bg-img {
+        position: absolute;
+      }
+
+      .ground-left {
+        bottom: 0;
+        right: 0;
+      }
+
+      .pin01 {
+        top: 5%;
+        left: 5%;
+      }
+
+      .pin02 {
+        top: 8%;
+        right: 8%;
+        transform: scaleX(-1) scale(0.8);
+      }
+
+      .pin03 {
+        bottom: 8%;
+        left: 5%;
+      }
+
+      .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 1;
+
+        img {
+          width: 20rem;
+          animation-name: main-animation;
+          animation-duration: 0.8s;
+          animation-play-state: running;
+          animation-direction: alternate;
+          animation-iteration-count: infinite;
+        }
+
+        @keyframes main-animation {
+          0% {
+            transform: translateY(0%);
+          }
+          100% {
+            transform: translateY(-4%);
+          }
+        }
+
+        h2 {
+          font-family: "Tanker-Regular";
+          font-size: 6rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .card-back {
+      position: relative;
+      height: 100%;
+      padding: 2rem 2rem 2rem 2.8rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0.2rem;
+        height: 80%;
+        background-color: #eaeaea;
+        transform: translateY(-50%);
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 1rem;
+
+        h2 {
+          font-size: 2.8rem;
+        }
+
+        small {
+          font-size: 1.4rem;
+          color: #9a9a9a;
+        }
+      }
+
+      .content {
+        margin-top: 4rem;
+
+        h3 {
+          font-size: 2.4rem;
+          margin-bottom: 0.4rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+          color: #9a9a9a;
+          line-height: 2.2rem;
+        }
+
+        a {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0.6rem;
+          margin-top: 1rem;
+          font-weight: 500;
+          color: #6c63ff;
+          font-size: 1.6rem;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+  }
+
+  .inactive-card02 {
     &:hover {
       transform: translate(-76%, -64%) rotate(-9deg);
     }
   }
 
-  .card-3 {
-    z-index: 3;
-    transform: translate(-26%, -62%) rotate(7deg);
-
+  .inactive-card03 {
     &:hover {
       transform: translate(-24%, -64%) rotate(9deg);
     }
   }
 
-  .active-card {
+  .active-2 {
     position: absolute;
     top: 50%;
     left: 50%;
     transition: all 0.2s;
     z-index: 5;
-  }
-
-  .active-1 {
-    z-index: 5;
-    transform: scale(1.05);
-    transition: all 0.2s;
-  }
-
-  .active-2 {
-    transform: translate(-80%, -50%) rotate(0deg) scale(1.05);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   .active-3 {
-    transform: translate(-26%, -50%) rotate(0deg) scale(1.05);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.2s;
+    z-index: 5;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 }
