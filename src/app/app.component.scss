@@ -24,10 +24,20 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   color: #444444;
-  position: relative;
   background-color: #e2e2e2;
+  position: relative;
+
+  .circle-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60rem;
+    height: 60rem;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+  }
 
   .card-1 {
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
@@ -825,9 +835,20 @@ h6 {
     .active-3 {
       transform: translate(-50%, -49%) rotate(0deg);
     }
+
+    .circle-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50rem;
+      height: 50rem;
+      background-color: #d9d9d9;
+      border-radius: 50%;
+    }
   }
 
-  @media only screen and (max-width: 490px) {
+  @media only screen and (max-width: 520px) {
     .card-1 {
       transform: translate(-50%, -50%) scale(0.8);
     }
@@ -868,6 +889,17 @@ h6 {
       transition: all 0.2s;
       z-index: 5;
       transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+    }
+
+    .circle-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 42rem;
+      height: 42rem;
+      background-color: #d9d9d9;
+      border-radius: 50%;
     }
   }
 }
