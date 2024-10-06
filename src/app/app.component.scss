@@ -826,4 +826,48 @@ h6 {
       transform: translate(-50%, -49%) rotate(0deg);
     }
   }
+
+  @media only screen and (max-width: 490px) {
+    .card-1 {
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    .card-2 {
+      transform: translate(-65%, -64%) rotate(-6deg) scale(0.8);
+    }
+
+    .card-3 {
+      transform: translate(-36%, -62%) rotate(7deg) scale(0.8);
+    }
+
+    .inactive-card02 {
+      &:hover {
+        transform: translate(-68%, -66%) rotate(-6deg) scale(0.8);
+      }
+    }
+
+    .inactive-card03 {
+      &:hover {
+        transform: translate(-32%, -64%) rotate(6deg) scale(0.8);
+      }
+    }
+
+    .active-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: all 0.2s;
+      z-index: 5;
+      transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+    }
+
+    .active-3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: all 0.2s;
+      z-index: 5;
+      transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+    }
+  }
 }
