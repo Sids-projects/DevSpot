@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -8,6 +8,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   showNav: boolean = true;
+  screenWidth: number = window.innerWidth;
 
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
@@ -15,6 +16,13 @@ export class AppComponent {
         this.showNav = event.url === '/' || event.urlAfterRedirects === '/';
       }
     });
+  }
+
+  ngOnInit() {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = event.target.innerWidth;
   }
 
   navigate() {

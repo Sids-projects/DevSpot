@@ -4,8 +4,12 @@
     class="card-1"
     (click)="cardOne()"
     [ngStyle]="{
-      width: cardOneActive ? 'calc(31rem * 2)' : '31rem',
-      'grid-template-columns': cardOneActive ? '1fr 1fr' : '1fr'
+      width: cardOneActive && screenWidth > 650 ? 'calc(31rem * 2)' : '31rem',
+      height: cardOneActive && screenWidth < 650 ? '56rem' : '42rem',
+      'grid-template-columns':
+        cardOneActive && screenWidth > 650 ? '1fr 1fr' : '1fr',
+      'grid-template-rows':
+        cardOneActive && screenWidth < 650 ? '42rem 1fr' : '1fr'
     }"
   >
     <div class="card-front">
@@ -49,8 +53,38 @@
         <h2>Portfolio</h2>
       </div>
     </div>
-    @if (cardOneActive) {
+    @if (cardOneActive && screenWidth > 650) {
     <div class="card-back">
+      <img
+        src="./assets/Portfolio/Card_1/Leaf.svg"
+        class="leaf01 bg-img"
+        alt="Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf.svg"
+        class="leaf02 bg-img"
+        alt="Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf.svg"
+        class="leaf03 bg-img"
+        alt="Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf.svg"
+        class="leaf04 bg-img"
+        alt="Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf_group01.svg"
+        class="grupLeaf01 bg-img"
+        alt="Group Leaf"
+      />
+      <img
+        src="./assets/Portfolio/Card_1/Leaf_group02.svg"
+        class="grupLeaf02 bg-img"
+        alt="Group Leaf"
+      />
       <header>
         <h2>Portfolio</h2>
         <small>Frontend Developer | Ui/Ux</small>
@@ -76,6 +110,24 @@
         </ul>
       </div>
     </div>
+    } @if (cardOneActive && screenWidth < 650) {
+    <div class="card-1-phn">
+      <p>
+        Skilled in languages and tools like HTML5, CSS3, JS, Angular, Figma,
+        Illustrator, Photoshop, PPT, and Inkscape.
+      </p>
+      <ul>
+        <li>
+          <img src="./assets/Portfolio/Card_1/insta.svg" alt="Insta Icon" />
+        </li>
+        <li>
+          <img
+            src="./assets/Portfolio/Card_1/Linkedin.svg"
+            alt="Linkedin Icon"
+          />
+        </li>
+      </ul>
+    </div>
     }
   </section>
 
@@ -86,8 +138,12 @@
       'active-2': cardTwoActive
     }"
     [ngStyle]="{
-      width: cardTwoActive ? 'calc(31rem * 2)' : '31rem',
-      'grid-template-columns': cardTwoActive ? '1fr 1fr' : '1fr'
+      width: cardTwoActive && screenWidth > 650 ? 'calc(31rem * 2)' : '31rem',
+      height: cardTwoActive && screenWidth < 650 ? '56rem' : '42rem',
+      'grid-template-columns':
+        cardTwoActive && screenWidth > 650 ? '1fr 1fr' : '1fr',
+      'grid-template-rows':
+        cardTwoActive && screenWidth < 650 ? '42rem 1fr' : '1fr'
     }"
     (click)="cardTwo()"
   >
@@ -153,8 +209,43 @@
         <h2>CSS_Genie</h2>
       </div>
     </div>
-    @if (cardTwoActive) {
+    @if (cardTwoActive && screenWidth > 650) {
     <div class="card-back">
+      <img
+        src="./assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball01 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball05 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./assets/Portfolio/Card_2/gray_ball.svg"
+        class="gray-ball06 bg-img"
+        alt="Gray Ball"
+      />
+      <img
+        src="./assets/Portfolio/Card_2/Yellow_ball.svg"
+        class="yellow-ball bg-img"
+        alt="Paint Vector"
+      />
+      <img
+        src="./assets/Portfolio/Card_2/Gray_paste.svg"
+        class="gray-paste01 bg-img"
+        alt="Gray Paste"
+      />
+      <img
+        src="./assets/Portfolio/Card_2/Gray_paste.svg"
+        class="gray-paste02 bg-img"
+        alt="Gray Paste"
+      />
+      <img
+        src="./assets/Portfolio/Card_2/Yellow_paste.svg"
+        class="yellow-paste02 bg-img"
+        alt="Yellow Paste"
+      />
       <header>
         <h2>Css_Genie</h2>
         <small>Ui Components</small>
@@ -172,6 +263,17 @@
         >
       </div>
     </div>
+    } @if (cardTwoActive && screenWidth < 650) {
+    <div class="card-2-phn">
+      <p>
+        CSSGenie helps you quickly style responsive HTML elements with ease and
+        creativity.
+      </p>
+      <a routerLink="CGHome"
+        >Design
+        <span class="material-symbols-outlined"> arrow_forward </span></a
+      >
+    </div>
     }
   </section>
 
@@ -182,8 +284,12 @@
       'active-3': cardThreeActive
     }"
     [ngStyle]="{
-      width: cardThreeActive ? 'calc(31rem * 2)' : '31rem',
-      'grid-template-columns': cardThreeActive ? '1fr 1fr' : '1fr'
+      width: cardThreeActive && screenWidth > 650 ? 'calc(31rem * 2)' : '31rem',
+      height: cardThreeActive && screenWidth < 650 ? '56rem' : '42rem',
+      'grid-template-columns':
+        cardThreeActive && screenWidth > 650 ? '1fr 1fr' : '1fr',
+      'grid-template-rows':
+        cardThreeActive && screenWidth < 650 ? '42rem 1fr' : '1fr'
     }"
     (click)="cardThree()"
   >
@@ -216,8 +322,23 @@
         <h2>Portfolio</h2>
       </div>
     </div>
-    @if (cardThreeActive) {
+    @if (cardThreeActive && screenWidth > 650) {
     <div class="card-back">
+      <img
+        src="./assets/Portfolio/Card_3/ground_left.svg"
+        class="ground-left bg-img"
+        alt="Ground left"
+      />
+      <img
+        src="./assets/Portfolio/Card_3/pin.svg"
+        class="pin01 bg-img"
+        alt="Pin"
+      />
+      <img
+        src="./assets/Portfolio/Card_3/pin.svg"
+        class="pin02 bg-img"
+        alt="Pin"
+      />
       <header>
         <h2>Dev_Router</h2>
         <small>Bookmarks</small>
@@ -233,6 +354,16 @@
           <span class="material-symbols-outlined"> arrow_forward </span></a
         >
       </div>
+    </div>
+    } @if (cardThreeActive && screenWidth < 650) {
+    <div class="card-3-phn">
+      <p>
+        DevRouter is a resource hub for frontend developers, providing quick
+        access to essential tools and references.
+      </p>
+      <a routerLink="DevRouter"
+        >Route <span class="material-symbols-outlined"> arrow_forward </span></a
+      >
     </div>
     }
   </section>
