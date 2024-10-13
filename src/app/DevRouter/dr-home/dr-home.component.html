@@ -1,36 +1,56 @@
-<main>
-  <header>
-    <nav class="nav-01">
-      <div class="logo">
-        <img src="./assets/DevRouter/bookmark.svg" alt="Logo" />
-        <h2>Spot</h2>
-      </div>
-    </nav>
+<main
+  [ngClass]="
+    menuName.value !== 'Home' ? 'layout-three-columns' : 'layout-two-columns'
+  "
+>
+  <nav class="app-nav">
+    <span class="material-symbols-outlined" (click)="scrollNavLeft()">
+      {{ currentScreenWidth < 850 ? "arrow_left" : "arrow_drop_up" }}
+    </span>
+    <div class="nav-links" #navLinks>
+      @for (item of propArr; track $index) {
+      <p
+        (click)="menuSelected(item)"
+        [ngClass]="menuName.value === item.value ? 'active-menu' : 'Home'"
+      >
+        <span class="material-symbols-outlined"> {{ item.icon }} </span>
+        {{ item.value }}
+      </p>
+      }
+    </div>
+    <span class="material-symbols-outlined" (click)="scrollNavRight()">
+      {{ currentScreenWidth < 850 ? "arrow_right" : "arrow_drop_down" }}
+    </span>
+  </nav>
 
-    <nav class="nav-02">
-      <span class="material-symbols-outlined" (click)="scrollNavLeft()">
-        arrow_circle_left
-      </span>
-      <div class="nav-links" #navLinks>
-        @for (item of propArr; track $index) {
-        <p
-          (click)="menuSelected(item.value)"
-          [ngClass]="menuName === item.value ? 'active-menu' : ''"
-        >
-          {{ item.value }}
-        </p>
-        }
+  <section class="app-info">
+    <header>
+      <p>
+        <span class="material-symbols-outlined"> explore_nearby </span> Router
+      </p>
+      <div>
+        <p>About</p>
+        <p routerLink="/">Portfolio</p>
       </div>
-      <span class="material-symbols-outlined" (click)="scrollNavRight()">
-        arrow_circle_right
-      </span>
-    </nav>
-  </header>
+    </header>
+    <div class="info-content">
+      <h2>{{ menuName.value }}</h2>
+      <p>
+        {{ menuName.desc }}
+      </p>
+    </div>
+    @if (currentScreenWidth > 850) {
+    <img src="./assets/DevRouter/RouterImg.svg" />
+    } @if (currentScreenWidth < 850 && menuName.value == 'Home') {
+    <img src="./assets/DevRouter/RouterImg.svg" />
+    }
+  </section>
 
+  @if (menuName.value !== 'Home') {
   <section class="content">
     @for (link of propArr; track $index) {
     <ng-container>
-      @if (link.value === menuName) {
+      @if (link.value === menuName.value) {
       <div class="card-box">
         <a
           class="card-view"
@@ -51,4 +71,5 @@
     </ng-container>
     }
   </section>
+  }
 </main>

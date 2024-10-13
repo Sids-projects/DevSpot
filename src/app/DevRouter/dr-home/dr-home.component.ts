@@ -1,6 +1,7 @@
 import {
   Component,
   ElementRef,
+  HostListener,
   QueryList,
   ViewChild,
   ViewChildren,
@@ -13,21 +14,100 @@ import {
 })
 export class DrHomeComponent {
   title = 'DevBookmarks';
+  currentScreenWidth!: number;
+  showImg!: number;
+
   propArr: any = [
-    { loop: 'vectorLinks', value: 'Vector' },
-    { loop: 'fontLinks', value: 'Font' },
-    { loop: 'cssLinks', value: 'Css' },
-    { loop: 'toolsLinks', value: 'Tools' },
-    { loop: 'refLinks', value: 'Reference' },
-    { loop: 'colorLinks', value: 'Colours' },
-    { loop: 'pictursLink', value: 'Pictures' },
-    { loop: 'mockupLinks', value: 'Mockup' },
-    { loop: 'iconsLinks', value: 'Icons' },
-    { loop: 'editorLinks', value: 'Editor' },
-    { loop: 'drawingLinks', value: 'Drawing' },
-    { loop: 'builderLinks', value: 'Builder' },
-    { loop: 'learnLinks', value: 'Learn' },
-    { loop: 'aiLinks', value: 'Ai' },
+    {
+      loop: 'homeLinks',
+      value: 'Home',
+      icon: 'home',
+      desc: 'DevRouter is a resource hub for frontend developers, providing quick access to essential tools and references.',
+    },
+    {
+      loop: 'vectorLinks',
+      value: 'Vector',
+      icon: 'polyline',
+      desc: 'Discover a wide range of high-quality vector graphics for your design projects. Access tools and libraries for creating scalable vector illustrations.',
+    },
+    {
+      loop: 'fontLinks',
+      value: 'Font',
+      icon: 'format_shapes',
+      desc: 'Explore collections of beautiful fonts and typography resources. Find the perfect font styles to enhance the readability and aesthetics of your website.',
+    },
+    {
+      loop: 'cssLinks',
+      value: 'Css',
+      icon: 'format_paint',
+      desc: 'Access essential CSS tools, frameworks, and generators. Improve your web design and layout skills with the best styles and customizations.',
+    },
+    {
+      loop: 'toolsLinks',
+      value: 'Tools',
+      icon: 'handyman',
+      desc: 'Equip yourself with powerful online tools for coding, debugging, and optimizing. These tools streamline your development process, saving time and effort.',
+    },
+    {
+      loop: 'refLinks',
+      value: 'Reference',
+      icon: 'note_stack',
+      desc: 'A curated collection of references, guides, and documentation. Stay informed with the latest web standards and best practices in development.',
+    },
+    {
+      loop: 'colorLinks',
+      value: 'Colours',
+      icon: 'palette',
+      desc: 'Browse color palettes, generators, and schemes to find your perfect hue. Elevate your design with vibrant and harmonious color combinations.',
+    },
+    {
+      loop: 'pictursLink',
+      value: 'Pictures',
+      icon: 'image',
+      desc: 'Explore free, high-resolution stock images for your projects. Find stunning visuals to complement your content, without worrying about licenses.',
+    },
+    {
+      loop: 'mockupLinks',
+      value: 'Mockup',
+      icon: 'perm_media',
+      desc: 'Access a variety of mockup templates to showcase your designs. From devices to apparel, present your work in a realistic setting.',
+    },
+    {
+      loop: 'iconsLinks',
+      value: 'Icons',
+      icon: 'add_reaction',
+      desc: 'Discover extensive icon libraries for every design need. Add personality to your UI with scalable, customizable icons that suit any style.',
+    },
+    {
+      loop: 'editorLinks',
+      value: 'Editor',
+      icon: 'edit_square',
+      desc: 'Find the best code editors and IDEs for productive development. Write, debug, and enhance your code in an efficient and developer-friendly environment.',
+    },
+    {
+      loop: 'drawingLinks',
+      value: 'Drawing',
+      icon: 'stylus_note',
+      desc: 'Access digital drawing tools for illustrations, wireframes, and designs. Create visually appealing sketches and diagrams with intuitive interfaces.',
+    },
+    {
+      loop: 'builderLinks',
+      value: 'Builder',
+      icon: 'backup',
+      desc: 'Utilize website and layout builders for rapid prototyping and design. Save time by using drag-and-drop tools for easy and responsive design creation.',
+    },
+    {
+      loop: 'learnLinks',
+      value: 'Learn',
+      icon: 'auto_stories',
+      desc: 'Improve your skills with learning resources, tutorials, and courses. Stay ahead with comprehensive guides and materials for all levels of developers.',
+    },
+    {
+      loop: 'aiLinks',
+      value: 'Ai',
+      icon: 'psychology',
+      desc: 'Explore AI-powered tools for automating and enhancing your development workflow. Leverage the latest artificial intelligence innovations to boost productivity.',
+    },
   ];
   links: any = [
     {
@@ -793,42 +873,56 @@ export class DrHomeComponent {
       ],
     },
   ];
-  menuName: string = 'Vector';
+  menuName = {
+    loop: 'homeLinks',
+    value: 'Home',
+    icon: 'home',
+    desc: 'DevRouter is a resource hub for frontend developers, providing quick access to essential tools and references.',
+  };
 
   @ViewChildren('cardScrollContainer')
   cardScrollContainers!: QueryList<ElementRef>;
   @ViewChild('navLinks') navLinks!: ElementRef;
 
-  scrollLeft(index: number) {
-    const scrollContainer =
-      this.cardScrollContainers.toArray()[index].nativeElement;
-    scrollContainer.scrollBy({
-      left: -300, // Adjust as needed
-      behavior: 'smooth',
-    });
+  ngOnInit() {
+    this.getCurrentScreenWidth();
   }
 
-  scrollRight(index: number) {
-    const scrollContainer =
-      this.cardScrollContainers.toArray()[index].nativeElement;
-    scrollContainer.scrollBy({
-      left: 300, // Adjust as needed
-      behavior: 'smooth',
-    });
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.getCurrentScreenWidth();
+  }
+
+  getCurrentScreenWidth() {
+    this.currentScreenWidth = window.innerWidth;
   }
 
   scrollNavLeft() {
-    this.navLinks.nativeElement.scrollBy({
-      left: -100,
-      behavior: 'smooth',
-    });
+    if (this.currentScreenWidth > 850) {
+      this.navLinks.nativeElement.scrollBy({
+        top: -100,
+        behavior: 'smooth',
+      });
+    } else {
+      this.navLinks.nativeElement.scrollBy({
+        left: -100,
+        behavior: 'smooth',
+      });
+    }
   }
 
   scrollNavRight() {
-    this.navLinks.nativeElement.scrollBy({
-      left: 100,
-      behavior: 'smooth',
-    });
+    if (this.currentScreenWidth > 850) {
+      this.navLinks.nativeElement.scrollBy({
+        top: 100,
+        behavior: 'smooth',
+      });
+    } else {
+      this.navLinks.nativeElement.scrollBy({
+        left: 100,
+        behavior: 'smooth',
+      });
+    }
   }
 
   menuSelected(param: any) {

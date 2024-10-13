@@ -9,89 +9,135 @@ p {
 }
 
 main {
+  font-family: "Space Grotesk", sans-serif !important;
   background-color: #f2f2f2;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 8rem 1fr;
   overflow: hidden;
-  font-family: "Space Grotesk", sans-serif !important;
 
-  header {
-    height: 14rem;
-    background-color: white;
-    border-bottom: 0.1rem solid #e1e1e1;
+  &.layout-three-columns {
+    grid-template-columns: 8rem 1fr 1fr;
+  }
+
+  &.layout-two-columns {
+    grid-template-columns: 8rem 1fr;
+  }
+
+  .app-nav {
+    background-color: #ffffff;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: 5rem 1fr 5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+
+    span {
+      font-size: 3rem !important;
+      cursor: pointer;
+      margin: auto;
+    }
+
+    .nav-links {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        cursor: pointer;
+        color: #adadad;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        transition: all 0.1s;
+      }
+
+      .active-menu {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #4672ff !important;
+      }
+    }
+  }
+
+  .app-info {
+    background-color: #4672ff;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 3rem;
-    z-index: 2;
+    padding: 3rem 4rem 0 4rem;
 
-    .nav-01 {
+    header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 1.8rem;
+      color: #ffffff;
 
-      .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.4rem;
-        font-size: 2rem !important;
-        font-weight: 500 !important;
-
-        img {
-          width: 2rem;
-        }
-      }
-    }
-
-    .nav-02 {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4rem;
-      padding-bottom: 1.2rem;
-
-      span {
-        font-size: 3.4rem !important;
-        cursor: pointer;
-      }
-
-      .nav-links {
-        width: 100%;
+      p {
+        font-weight: 500;
+        font-size: 1.6rem;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 5rem;
-        padding: 2rem 0;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        p {
-          font-size: 1.8rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.1s;
-          color: #656565;
-        }
-
-        .active-menu {
-          font-size: 2.8rem;
-          font-weight: 800;
-          color: black !important;
-        }
+        gap: 0.6rem;
+        cursor: pointer;
       }
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2.4rem;
+      }
+    }
+
+    .info-content {
+      text-align: center;
+      color: white;
+
+      h2 {
+        font-size: 5rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        min-width: 20rem;
+        width: 100%;
+        max-width: 50rem;
+        margin: 0 auto;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+    }
+
+    img {
+      min-width: 10rem;
+      width: 100%;
+      max-width: 50rem;
+      margin: 0 auto;
     }
   }
 
   .content {
     box-sizing: border-box;
-    height: calc(100vh - 14rem);
+    background-color: #fafafa;
+    height: 100%;
     overflow-y: scroll;
 
     .card-box {
@@ -104,7 +150,7 @@ main {
 
       .card-view {
         text-decoration: none;
-        height: 22rem;
+        height: 18rem;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 14px 0px,
           rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
         background-color: white;
@@ -126,12 +172,8 @@ main {
         }
 
         .set-01 {
-          background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px),
-            radial-gradient(#ffffff 0.5px, #656cf1c9 0.5px);
-          background-size: 20px 20px;
-          background-position: 0 0, 10px 10px;
-          background-size: 10px 10px;
-          height: 12rem;
+          background-color: #4672ff;
+          height: 9rem;
         }
 
         .set-02 {
@@ -144,14 +186,14 @@ main {
           h3 {
             font-size: 1.6rem;
             font-weight: 600;
-            color: rgb(33, 33, 33);
+            color: #3f3d56;
             line-height: 2rem;
             margin-bottom: 0.4rem;
           }
 
           p {
             font-size: 1.2rem;
-            color: rgb(96, 96, 96);
+            color: #959595;
             font-weight: 500;
             line-height: 1.6rem;
           }
@@ -170,5 +212,90 @@ main {
   }
   100% {
     scale: 1;
+  }
+}
+
+@media only screen and (max-width: 1039px) {
+  main {
+    font-family: "Space Grotesk", sans-serif !important;
+    background-color: #f2f2f2;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    overflow: hidden;
+
+    &.layout-three-columns {
+      grid-template-columns: 8rem 1fr auto !important;
+    }
+
+    &.layout-two-columns {
+      grid-template-columns: 8rem 1fr;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  main {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 6rem 1fr;
+    background-color: white;
+
+    &.layout-three-columns {
+      grid-template-columns: 1fr !important;
+      grid-template-rows: 7rem 18rem 1fr !important;
+      align-items: center;
+    }
+
+    &.layout-two-columns {
+      grid-template-columns: 1fr !important;
+      grid-template-rows: 7rem 1fr !important;
+      align-items: center;
+    }
+  }
+
+  .app-nav {
+    height: fit-content !important;
+    grid-template-columns: 5rem 1fr 5rem;
+    grid-template-rows: 1fr !important;
+
+    .nav-links {
+      height: fit-content !important;
+      flex-direction: row !important;
+    }
+  }
+
+  .app-info {
+    background-color: #4672ff;
+    height: 100%;
+    padding: 0 1rem !important;
+
+    header {
+      padding: 1.8rem !important;
+    }
+
+    .info-content {
+      h2 {
+        font-size: 2.8rem !important;
+        margin-bottom: 0.6rem !important;
+      }
+
+      p {
+        font-size: 1.4rem !important;
+        line-height: 2rem !important;
+        padding: 0 !important;
+        margin-bottom: 1.4rem !important;
+      }
+    }
+  }
+
+  .content {
+    .card-box {
+      gap: 1rem !important;
+      padding: 4rem 2rem !important;
+
+      .card-view {
+        transform: scale(0.8) !important;
+      }
+    }
   }
 }
