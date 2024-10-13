@@ -63,7 +63,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 #app-main {
-  height: 100dvh;
+  height: 100vh;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
@@ -467,7 +467,7 @@ input[type="range"]::-webkit-slider-thumb {
 #app-canvas {
   background-color: white;
   width: calc(100dvw - 12rem);
-  height: calc(100dvh - 4rem);
+  height: calc(100vh - 4rem);
   overflow-x: hidden;
   overflow-y: hidden;
   border-radius: 0.8rem;

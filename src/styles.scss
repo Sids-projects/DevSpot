@@ -1,6 +1,17 @@
 @import url(./assets/Scss/variables.scss);
 
 html,
+body,
+div,
+span,
+app-root,
+* {
+  -webkit-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+html,
 body {
   height: 100%;
 }
