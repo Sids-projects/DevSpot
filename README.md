@@ -28,8 +28,8 @@ This project is built using Angular and incorporates CSS animations to deliver a
 
 ### Screenshots
 
-![Welcome Screen](https://your-screenshot-link.com/welcome.png)
-![Commands in Action](https://your-screenshot-link.com/commands.png)
+![Welcome Screen]([https://your-screenshot-link.com/welcome.png](https://github.com/Sids-projects/DevSpot/blob/7f3c68167025f98b2b192885fca764f5db277d0b/src/assets/screenshot01.png))
+![Commands in Action]([https://your-screenshot-link.com/commands.png](https://github.com/Sids-projects/DevSpot/blob/7f3c68167025f98b2b192885fca764f5db277d0b/src/assets/screenshot02.png))
 
 ## Technologies Used
 
