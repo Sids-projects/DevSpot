@@ -226,6 +226,30 @@ main {
     ul {
       font-size: 1.4rem;
       line-height: 2.6rem;
+
+      li {
+        visibility: hidden; // Start hidden
+        opacity: 0; // Start fully transparent
+        transform: translateY(20px); // Start slightly below
+        animation: visibleEffect 0.8s forwards;
+      }
+
+      // Add a staggered delay for each list item
+      li:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+
+      li:nth-child(2) {
+        animation-delay: 1s;
+      }
+
+      li:nth-child(3) {
+        animation-delay: 1.5s;
+      }
+
+      li:nth-child(4) {
+        animation-delay: 2s;
+      }
     }
   }
 
@@ -241,18 +265,67 @@ main {
       text-transform: uppercase;
     }
 
-    ul,
-    ol {
+    ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 2rem;
       font-size: 1.6rem;
+
+      li {
+        // Animation
+        visibility: hidden; // Start hidden
+        opacity: 0; // Start fully transparent
+        transform: translateY(20px); // Start slightly below
+        animation: visibleEffect 0.8s forwards;
+      }
+
+      // Add a staggered delay for each list item
+      li:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+
+      li:nth-child(2) {
+        animation-delay: 1s;
+      }
+
+      li:nth-child(3) {
+        animation-delay: 1.5s;
+      }
+
+      li:nth-child(4) {
+        animation-delay: 2s;
+      }
+
+      li:nth-child(5) {
+        animation-delay: 2.5s;
+      }
+
+      li:nth-child(6) {
+        animation-delay: 3s;
+      }
+
+      li:nth-child(7) {
+        animation-delay: 3.5s;
+      }
     }
 
     ol {
       margin-top: 1.8rem;
       padding-left: 1.8rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      font-size: 1.6rem;
+
+      li {
+        // Animation
+        visibility: hidden; // Start hidden
+        opacity: 0; // Start fully transparent
+        transform: translateY(20px); // Start slightly below
+        animation: visibleEffect 0.8s forwards;
+      }
     }
 
     a {
@@ -276,6 +349,30 @@ main {
 
       .material-symbols-outlined {
         font-size: 3rem;
+      }
+    }
+
+    .experience-set {
+      ol {
+        li:nth-child(1) {
+          animation-delay: 2s;
+        }
+
+        li:nth-child(2) {
+          animation-delay: 2.5s;
+        }
+
+        li:nth-child(3) {
+          animation-delay: 3s;
+        }
+
+        li:nth-child(4) {
+          animation-delay: 3.5s;
+        }
+
+        li:nth-child(5) {
+          animation-delay: 4s;
+        }
       }
     }
   }
@@ -376,6 +473,20 @@ main {
     li {
       font-size: 1.4rem !important;
     }
+  }
+}
+
+@keyframes visibleEffect {
+  0% {
+    visibility: hidden; // Hidden at the start
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    visibility: visible; // Show the element
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
