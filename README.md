@@ -1,6 +1,7 @@
 # DevSpot
 
-# Terminal Portfolio 🌐  
+# Terminal Portfolio 🌐
+
 _A terminal-inspired portfolio built using Angular._
 
 ![Angular](https://img.shields.io/badge/Angular-v17-red)
@@ -40,13 +41,14 @@ This project is built using Angular and incorporates CSS animations to deliver a
 
 Feel free to reach out:
 
-- **Portfolio**: [sids-projects.github.io/TerminalPortfolio](https://sids-projects.github.io/TerminalPortfolio)
+- **Portfolio**: [sids-projects.github.io/TerminalPortfolio](https://sids-projects.github.io/DevSpot/#/)
 - **Email**: siddarthg.dev@gmail.com
 - **GitHub**: [Sids-projects](https://github.com/Sids-projects)
 
 ## Acknowledgments
 
 Special thanks to:
+
 - Angular community for documentation and support.
 - [Hyper](https://hyper.is/) for terminal UI inspiration.
 
