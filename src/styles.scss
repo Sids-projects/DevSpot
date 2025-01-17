@@ -372,6 +372,7 @@ main {
   }
 }
 
+/* The typewriter cursor effect */
 .type-effect {
   overflow: hidden;
   border-right: 0.15em solid #ffe267;
@@ -390,7 +391,6 @@ main {
   }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
   from,
   to {
