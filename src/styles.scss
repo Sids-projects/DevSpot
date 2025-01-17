@@ -225,7 +225,7 @@ main {
   .set-02 {
     height: calc(100vh - 4rem - 8rem);
     display: grid;
-    grid-template-rows: 1fr 8rem;
+    grid-template-rows: 1fr;
 
     h2 {
       font-size: 3.6rem;
@@ -331,7 +331,11 @@ main {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 2rem 2.8rem !important;
+  }
+
   .set-01 {
     .content {
       h3 {
@@ -344,6 +348,26 @@ main {
         font-size: 1.6rem !important;
         line-height: 2rem !important;
       }
+    }
+  }
+
+  .set-02 {
+    grid-template-rows: 1fr !important;
+    align-items: center !important;
+
+    h2 {
+      font-size: 2rem !important;
+      text-align: center !important;
+      margin-bottom: 1.8rem !important;
+    }
+
+    ul,
+    ol {
+      gap: 1rem !important;
+    }
+
+    li {
+      font-size: 1.4rem !important;
     }
   }
 }
