@@ -27,6 +27,13 @@ body {
   font-family: "Space Mono", serif;
 }
 
+.mat-mdc-menu-item-text {
+  font-family: "Space Mono", serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: #303030 !important;
+}
+
 html,
 body,
 div,

@@ -6,14 +6,23 @@
       <p routerLink="skills" routerLinkActive="active-route">Skills</p>
       <p routerLink="projects" routerLinkActive="active-route">Projects</p>
       <p routerLink="experience" routerLinkActive="active-route">Experience</p>
-      <span class="material-symbols-outlined" [matMenuTriggerFor]="menu">
+      <span class="material-symbols-outlined" *ngIf="screenWidth > 710">
+        segment
+      </span>
+      <span
+        class="material-symbols-outlined"
+        *ngIf="screenWidth <= 710"
+        [matMenuTriggerFor]="menu"
+      >
         segment
       </span>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="about">About</button>
-        <button mat-menu-item routerLink="skills">Skills</button>
-        <button mat-menu-item routerLink="projects">Projects</button>
-        <button mat-menu-item routerLink="experience">Experience</button>
+        <ng-container *ngIf="screenWidth <= 710">
+          <button mat-menu-item routerLink="about">About</button>
+          <button mat-menu-item routerLink="skills">Skills</button>
+          <button mat-menu-item routerLink="projects">Projects</button>
+          <button mat-menu-item routerLink="experience">Experience</button>
+        </ng-container>
       </mat-menu>
     </div>
   </header>
