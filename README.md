@@ -1,27 +1,56 @@
 # DevSpot
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+# Terminal Portfolio 🌐  
+_A terminal-inspired portfolio built using Angular._
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-v17-red)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.9-blue)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+Terminal Portfolio is a modern and dynamic portfolio that mimics a terminal interface.  
+It features typing animations, command-based navigation, and a sleek design to showcase my skills, projects, and contact information in a unique way.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project is built using Angular and incorporates CSS animations to deliver an interactive user experience.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Typing Animation**: Terminal-style introduction with a dynamic typing effect.
+- **Command Line Navigation**: Supports commands like `help`, `about`, `skills`, `projects`, and `contact`.
+- **Responsive Design**: Fully responsive and works seamlessly across devices.
+- **Angular-Powered**: Built using Angular 17 and TypeScript for a robust and scalable structure.
 
-## Running unit tests
+## Demo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+🎯 **Live Demo**: [View Portfolio](https://sids-projects.github.io/DevSpot/#/home)
 
-## Running end-to-end tests
+### Screenshots
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![Welcome Screen](https://your-screenshot-link.com/welcome.png)
+![Commands in Action](https://your-screenshot-link.com/commands.png)
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Frontend**: Angular 17, TypeScript, HTML5, CSS3
+- **Styling**: Custom CSS animations
+- **Design Tools**: Adobe Illustrator, Figma
+
+## Contact
+
+Feel free to reach out:
+
+- **Portfolio**: [sids-projects.github.io/TerminalPortfolio](https://sids-projects.github.io/TerminalPortfolio)
+- **Email**: siddarthg.dev@gmail.com
+- **GitHub**: [Sids-projects](https://github.com/Sids-projects)
+
+## Acknowledgments
+
+Special thanks to:
+- Angular community for documentation and support.
+- [Hyper](https://hyper.is/) for terminal UI inspiration.
+
+## Future Enhancements
+
+- Add more commands like `experience` and `education`.
+- Integrate dynamic data fetching for projects and contact details.
