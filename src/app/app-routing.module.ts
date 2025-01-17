@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { DrHomeComponent } from './DevRouter/dr-home/dr-home.component';
-import { CgHomeComponent } from './CSSGenie/cg-home/cg-home.component';
-import { CgEditorComponent } from './CSSGenie/cg-editor/cg-editor.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 const routes: Routes = [
-  // DevRoutes
-  { path: 'DevRouter', component: DrHomeComponent },
-
-  // CssGenie
-  { path: 'CGHome', component: CgHomeComponent },
-  { path: 'CGEditor', component: CgEditorComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'skills', component: SkillsComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'experience', component: ExperienceComponent },
 ];
 
 @NgModule({
