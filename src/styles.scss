@@ -216,61 +216,14 @@ main {
     display: none;
   }
 
-  header {
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.2rem;
-      text-transform: uppercase;
-      font-size: 1.6rem;
-    }
-
-    div {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 2.8rem;
-
-      p {
-        font-weight: 600;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-        font-size: 1.4rem;
-      }
-    }
-
-    .active-route {
-      position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        bottom: -0.6rem;
-        left: 50%;
-        transform: translateX(-51%);
-        width: 100%;
-        height: 0.2rem;
-        background-color: #ffe267;
-        border-radius: 0.1rem;
-      }
-    }
-  }
-
-  .set-01 {
+  .app-home {
     height: 100dvh;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 0.8rem;
-
-    ul {
-      list-style: none;
-    }
+    gap: 1.4rem;
+    padding: 2rem;
 
     h3 {
       font-size: 6.4rem;
@@ -283,6 +236,9 @@ main {
 
     p {
       font-size: 1.8rem;
+      text-align: center;
+      max-width: 120rem;
+      line-height: 3rem;
     }
 
     .icons {
@@ -353,6 +309,7 @@ main {
     height: 100dvh;
     display: grid;
     grid-template-rows: 1fr;
+    padding: 2rem;
 
     h2 {
       font-size: 3.6rem;
@@ -475,140 +432,29 @@ main {
   }
 }
 
-@media only screen and (max-width: 920px) {
-  .set-01 {
-    .content {
-      h3 {
-        font-size: 3.4rem !important;
-        line-height: 3.4rem !important;
-        margin-bottom: 1rem !important;
-      }
-
-      p {
-        font-size: 1.6rem !important;
-        line-height: 2rem !important;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .set-01 {
-    align-items: center !important;
-
-    .content {
-      align-items: center !important;
-      h3 {
-        font-size: 4.4rem !important;
-        line-height: 4.4rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center;
-      }
-
-      p {
-        font-size: 1.8rem !important;
-        line-height: 2.4rem !important;
-        text-align: center;
-      }
-
-      .icons {
-        justify-content: center !important;
-      }
-    }
-
-    .vector {
-      display: none !important;
-    }
-  }
-}
-
-@media only screen and (max-width: 710px) {
-  header {
-    div {
-      p {
-        display: none;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  main {
-    padding: 2rem 2.8rem !important;
-  }
-
-  .set-01 {
-    .content {
-      h3 {
-        font-size: 3.4rem !important;
-        line-height: 3.4rem !important;
-        margin-bottom: 1rem !important;
-      }
-
-      p {
-        font-size: 1.6rem !important;
-        line-height: 2rem !important;
-      }
-    }
-  }
-
-  .set-02 {
-    grid-template-rows: 1fr !important;
-    align-items: center !important;
-
-    h2 {
-      font-size: 2rem !important;
-      text-align: center !important;
-      margin-bottom: 1.8rem !important;
-    }
-
-    ul,
-    ol {
-      gap: 1rem !important;
-    }
-
-    li {
-      font-size: 1.4rem !important;
-    }
-  }
-}
-
-@keyframes visibleEffect {
-  0% {
-    visibility: hidden; // Hidden at the start
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    visibility: visible; // Show the element
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* The typewriter cursor effect */
 .type-effect {
+  max-width: fit-content;
+  display: inline-block;
   overflow: hidden;
   border-right: 0.15em solid #ffe267;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.2rem;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  white-space: normal; /* important: allow wrapping */
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
+/* use max-height or max-lines if needed */
 @keyframes typing {
   from {
-    width: 0;
+    width: 0ch;
   }
   to {
-    width: 100%;
+    width: 40ch; /* approximate number of characters */
   }
 }
 
 @keyframes blink-caret {
-  from,
-  to {
+  0%,
+  100% {
     border-color: transparent;
   }
   50% {
