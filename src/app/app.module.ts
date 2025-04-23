@@ -18,23 +18,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 
-// Components
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { ExperienceComponent } from './components/experience/experience.component';
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    TruncatePipe,
-    HomeComponent,
-    AboutComponent,
-    SkillsComponent,
-    ProjectsComponent,
-    ExperienceComponent,
-  ],
+  declarations: [AppComponent, TruncatePipe],
   imports: [
     BrowserModule,
     AppRoutingModule,

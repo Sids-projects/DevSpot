@@ -1,30 +1,186 @@
 <main>
-  <header>
-    <p class="logo">Portfolio</p>
-    <div>
-      <p routerLink="about" routerLinkActive="active-route">About</p>
-      <p routerLink="skills" routerLinkActive="active-route">Skills</p>
-      <p routerLink="projects" routerLinkActive="active-route">Projects</p>
-      <p routerLink="experience" routerLinkActive="active-route">Experience</p>
-      <span class="material-symbols-outlined" *ngIf="screenWidth > 710">
-        segment
-      </span>
-      <span
-        class="material-symbols-outlined"
-        *ngIf="screenWidth <= 710"
-        [matMenuTriggerFor]="menu"
-      >
-        segment
-      </span>
-      <mat-menu #menu="matMenu">
-        <ng-container *ngIf="screenWidth <= 710">
-          <button mat-menu-item routerLink="about">About</button>
-          <button mat-menu-item routerLink="skills">Skills</button>
-          <button mat-menu-item routerLink="projects">Projects</button>
-          <button mat-menu-item routerLink="experience">Experience</button>
-        </ng-container>
-      </mat-menu>
+  <section class="set-01 app-home">
+    <h3>Hello!</h3>
+    <div class="flex-start">
+      <h3 class="highlight type-effect">👋 Hey there, I'm Siddarth</h3>
     </div>
-  </header>
-  <router-outlet></router-outlet>
+    <p>
+      I'm a Frontend Developer who enjoys turning pixels into playful,
+      functional interfaces. I like building things that feel smooth, look
+      clean, and just work.
+    </p>
+    <p>
+      Design is where I sketch ideas. Code is where I bring them to life. I try
+      to keep things simple, neat, and a little bit shiny ✨
+    </p>
+  </section>
+
+  <section class="set-02 app-about">
+    <div class="set-02-content about-set">
+      <h2>💻 What I Do</h2>
+      <p>I like making the web feel nice.</p>
+      <h3>I work with:</h3>
+      <ul>
+        <li>> Name: <span class="highlight">Siddarth.G</span></li>
+        <li>
+          > HTML / CSS / JavaScript / TypeScript
+          <span class="highlight">to build the structure and style</span>
+        </li>
+        <li>
+          > Angular
+          <span class="highlight">for dynamic, single-page magic</span>
+        </li>
+        <li>
+          > Figma / Illustrator / Photoshop / Inkscape
+          <span class="highlight"
+            >for shaping UI and keeping it all neat and user-friendly</span
+          >
+        </li>
+      </ul>
+      <p>
+        Whether it's a quick mockup or a polished component, I enjoy both
+        sketching the idea and writing the code that makes it real.
+      </p>
+    </div>
+  </section>
+
+  <section class="set-02 app-skills">
+    <div class="set-02-content skills-set">
+      <h2>🧰 Tools I Like</h2>
+      <p>Here's a little toolbox I keep reaching for:</p>
+      <ul>
+        <li>
+          > Frontend
+          <span>Crafting smooth, responsive UIs using:</span>
+          <span class="highlight"
+            >HTML5 • CSS3 • JavaScript • TypeScript • Angular</span
+          >
+        </li>
+        <li>
+          > Design & UX
+          <span>I sketch, wireframe, and finesse interfaces using:</span>
+          <span class="highlight"
+            >Figma • Illustrator • Photoshop • Inkscape</span
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="set-02 app-experience">
+    <div class="set-02-content experience-set">
+      <h2>🧠 My Journey So Far</h2>
+      <ul>
+        <li>🛠 Vsolv Engineering Pvt Ltd</li>
+        <li>Frontend Developer / UI-UX Designer</li>
+        <li>2025 - Present</li>
+        <li>
+          <ol>
+            <li>
+              - Built modern Angular web apps that run silky smooth across
+              devices
+            </li>
+            <li>
+              - Collaborated like a champ with developers, designers & product
+              folks
+            </li>
+            <li>
+              - Wove in eye-catching UI/UX that didn't just look good, but made
+              sense
+            </li>
+            <li>
+              - Always racing against time (and winning), delivering
+              high-quality code
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="set-02 app-projects">
+    <div class="set-02-content projects-set">
+      <h2>🧪 Projects</h2>
+      <ul>
+        <li>💸 WalRec - Wallet Recorder</li>
+        <li>
+          A simple finance tracker to help keep an eye on daily expenses and
+          incomes. Made with Angular + Firebase — login, track, and see your
+          money move in real-time.
+        </li>
+        <li>
+          - GitHub: [<span class="highlight">Walrec Repository</span>] (<a
+            href="https://walrec-9e5d8.web.app/"
+            target="_blank"
+            ><span class="highlight">Link</span></a
+          >)
+        </li>
+        <li>
+          - Live Demo: [<span class="highlight">WalRec Website</span>](<a
+            href="https://walrec-9e5d8.web.app/"
+            target="_blank"
+            ><span class="highlight">Link</span></a
+          >)
+        </li>
+      </ul>
+
+      <ul>
+        <li>🎨 CSSFusion</li>
+        <li>A lightweight CSS utility library.</li>
+        <li>
+          It's like a little style toolkit — plug it into any project and build
+          with ready-made classes. Handy when you want less CSS clutter and more
+          styling freedom.
+        </li>
+        <li>
+          - GitHub: [<span class="highlight">Walrec Repository</span>] (<a
+            href="https://walrec-9e5d8.web.app/"
+            target="_blank"
+            ><span class="highlight">Link</span></a
+          >)
+        </li>
+        <li>
+          - Live Demo: [<span class="highlight">WalRec Website</span>](<a
+            href="https://walrec-9e5d8.web.app/"
+            target="_blank"
+            ><span class="highlight">Link</span></a
+          >)
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="set-02 app-qualify">
+    <div class="set-02-content projects-set">
+      <h2>🏫 A Bit of Background</h2>
+      <ul>
+        <li>St. Peter's Institute of Higher Education (2018 - 2020)</li>
+        <li>
+          B.Com — learned about business, numbers, and how not to mess up a
+          balance sheet
+        </li>
+      </ul>
+      <ul>
+        <li>ICF Silver Jubilee School (2016 - 2017)</li>
+        <li>
+          Wrapped up higher secondary, figured out I liked tech more than
+          textbooks
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="set-02 app-contact">
+    <div class="set-02-content projects-set">
+      <h2>📮 Say Hello</h2>
+      <ul>
+        <li>
+          Always open to chat, share ideas, or collab on something cool. Whether
+          it's frontend fun, UI/UX design, or random side projects — I'm in.
+        </li>
+        <li>📧 siddarthg.dev&#64;gmail.com</li>
+        <li>🌐 My DevSpot</li>
+      </ul>
+    </div>
+  </section>
 </main>
