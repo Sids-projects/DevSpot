@@ -1,4 +1,11 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
@@ -9,7 +16,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   currecntComp: string = 'home';
+  @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
   isDarkMode = false;
+  newTheme!: string;
   screenWidth: number = window.innerWidth;
   screenHeight: number = window.innerHeight;
 
@@ -26,6 +35,26 @@ export class AppComponent implements OnInit {
         this.currecntComp = urlSegment;
       }
     });
+  }
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const section = entry.target as HTMLElement;
+          if (entry.isIntersecting) {
+            section.classList.remove('inactive');
+          } else {
+            section.classList.add('inactive');
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    this.sections.forEach((section) => observer.observe(section.nativeElement));
   }
 
   // Listener for screen resize
@@ -51,7 +80,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleTheme(): void {
-    const newTheme = this.isDarkMode ? 'light-mode' : 'dark-mode';
-    this.setTheme(newTheme);
+    this.newTheme = this.isDarkMode ? 'light-mode' : 'dark-mode';
+    this.setTheme(this.newTheme);
   }
 }
