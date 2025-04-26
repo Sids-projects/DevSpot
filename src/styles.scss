@@ -440,6 +440,7 @@ main {
 
     .project-content {
       width: 34rem;
+      margin: 0 !important;
 
       small {
         font-size: 2rem !important;
@@ -651,8 +652,10 @@ main {
     }
 
     .qualify-container {
+      max-width: 46rem;
+      height: fit-content !important;
       grid-template-columns: repeat(1, 1fr) !important;
-      gap: 1.8rem !important;
+      gap: 2rem !important;
 
       .qualify-content {
         flex-direction: row !important;
