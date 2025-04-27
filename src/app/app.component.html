@@ -1,35 +1,40 @@
 <main>
-  <section class="app-home" #sectionRef>
-    <button class="theme-btn" (click)="toggleTheme()">
-      <span *ngIf="isDarkMode == false">🌞</span>
-      <span *ngIf="isDarkMode == true">🌙</span>
-    </button>
-    <h3 class="highlight type-effect" *ngIf="screenWidth > 700">
-      👋 Hey there, I'm Siddarth G
-    </h3>
-    <h3 class="highlight" *ngIf="screenWidth < 700">
-      👋 Hey there,
-      <span class="type-effect">I'm Siddarth G</span>
-    </h3>
-    <p>
-      I'm a Frontend Developer who enjoys turning pixels into playful,
-      functional interfaces. I like building things that feel smooth, look
-      clean, and just work. Design is where I sketch ideas. Code is where I
-      bring them to life. I try to keep things simple, neat, and a little bit
-      shiny ✨
-    </p>
-    <div class="icons">
-      <a href="https://github.com/orgs/Sids-projects/repositories"
-        ><img src="./assets/Subtract.svg" alt="Github Logo" /> Github</a
-      >
-      <a href="#"><img src="./assets/Vector.svg" alt="Github Logo" /> NPM</a>
-      <a href="https://www.linkedin.com/in/mrsiddarth/"
-        ><img src="./assets/linkedin.svg" alt="Linkedin Logo" /> Linkedin</a
-      >
+  <section class="app-component app-home" #sectionRef>
+    <nav>
+      <button class="theme-btn" (click)="toggleTheme()">
+        <span *ngIf="isDarkMode == false">🌞</span>
+        <span *ngIf="isDarkMode == true">🌙</span>
+      </button>
+    </nav>
+
+    <div class="home-container">
+      <h3 class="highlight type-effect" *ngIf="screenWidth > 700">
+        👋 Hey there, I'm Siddarth G
+      </h3>
+      <h3 class="highlight" *ngIf="screenWidth < 700">
+        👋 Hey there,
+        <span class="type-effect">I'm Siddarth G</span>
+      </h3>
+      <p>
+        I'm a Frontend Developer who enjoys turning pixels into playful,
+        functional interfaces. I like building things that feel smooth, look
+        clean, and just work. Design is where I sketch ideas. Code is where I
+        bring them to life. I try to keep things simple, neat, and a little bit
+        shiny ✨
+      </p>
+      <div class="icons">
+        <a href="https://github.com/orgs/Sids-projects/repositories"
+          ><img src="./assets/Subtract.svg" alt="Github Logo" /> Github</a
+        >
+        <a href="#"><img src="./assets/Vector.svg" alt="Github Logo" /> NPM</a>
+        <a href="https://www.linkedin.com/in/mrsiddarth/"
+          ><img src="./assets/linkedin.svg" alt="Linkedin Logo" /> Linkedin</a
+        >
+      </div>
     </div>
   </section>
 
-  <section class="set-02 app-about" #sectionRef>
+  <section class="app-component app-about" #sectionRef>
     <header>
       <h2>🧰 What I Use & How I Build</h2>
       <p>
@@ -38,7 +43,7 @@
       </p>
     </header>
 
-    <div class="set-02-body">
+    <div class="app-body">
       <div class="about-container">
         <div class="about-content">
           <h3 class="highlight">HTML / CSS / JavaScript / TypeScript</h3>
@@ -65,12 +70,12 @@
     </div>
   </section>
 
-  <section class="set-02 app-experience" #sectionRef>
+  <section class="app-component app-experience" #sectionRef>
     <header>
       <h2>🧠 My Journey So Far</h2>
       <p>From curious clicks to clean code — here's where I've been.</p>
     </header>
-    <div class="set-02-body experience-content">
+    <div class="app-body experience-content">
       <div class="experience-content-01">
         <h3 class="highlight">🛠 Vsolv Engineering Pvt Ltd</h3>
         <p>Frontend Developer / UI-UX Designer</p>
@@ -99,7 +104,7 @@
     </div>
   </section>
 
-  <section class="set-02 app-qualify" #sectionRef>
+  <section class="app-component app-qualify" #sectionRef>
     <header>
       <h2>🏫 A Bit of Background</h2>
       <p>
@@ -108,7 +113,7 @@
       </p>
     </header>
 
-    <div class="set-02-body">
+    <div class="app-body">
       <div class="qualify-container">
         <div class="qualify-content">
           <h2 class="qualify-icon qualify-icon-01">🏣</h2>
@@ -136,13 +141,13 @@
     </div>
   </section>
 
-  <section class="set-02 app-projects" #sectionRef>
+  <section class="app-component app-projects" #sectionRef>
     <header>
       <h2>🧪 Projects</h2>
       <p>Stuff I've built — ideas turned into things you can click.</p>
     </header>
 
-    <div class="set-02-body">
+    <div class="app-body">
       <div class="project-container" #projectContainer>
         <div class="project-content">
           <img src="./assets/pin.svg" alt="Pin Vector" />
@@ -224,7 +229,7 @@
     </div>
   </section>
 
-  <section class="set-02 app-contact" #sectionRef>
+  <section class="app-component app-contact" #sectionRef>
     <header>
       <h2>📮 Say Hello</h2>
       <p>
@@ -232,7 +237,7 @@
         it's frontend fun, UI/UX design, or random side projects — I'm in.
       </p>
     </header>
-    <div class="set-02-body contact-details">
+    <div class="app-body contact-details">
       <p>
         <span>📧</span>
         <a href="mailto:siddarthg.dev@gmail.com">siddarthg.dev&#64;gmail.com</a>

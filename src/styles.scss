@@ -10,8 +10,11 @@ body {
 }
 
 main {
-  .app-home,
-  .set-02 {
+  .app-component {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 4rem 2rem;
     transition: transform 0.8s ease, filter 0.8s ease, opacity 0.8s ease;
     will-change: transform, filter, opacity;
     transform: scale(1);
@@ -23,80 +26,9 @@ main {
       filter: blur(10px);
       opacity: 0.3;
     }
-  }
-
-  .app-home {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.4rem;
-    padding: 2rem;
-    position: relative;
-
-    h3 {
-      font-size: 6.4rem;
-      line-height: 6.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2rem;
-      text-wrap: nowrap;
-    }
-
-    p {
-      font-size: 1.8rem;
-      text-align: center;
-      max-width: 120rem;
-      line-height: 3rem;
-    }
-
-    .icons {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.8rem;
-      margin-top: 1rem;
-
-      a {
-        @include blurLayer($bdrRds: 1.2rem);
-        color: var(--font-colour);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        font-weight: 500;
-        letter-spacing: 0.1rem;
-        margin-bottom: 0.4rem;
-        padding: 0.6rem 1.8rem 0.6rem 1rem;
-        border-radius: 0.6rem;
-        text-decoration: none;
-
-        img {
-          width: 2rem;
-        }
-      }
-    }
-
-    .theme-btn {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      background-color: transparent;
-      border: none;
-      color: var(--font-colour);
-      font-size: 2.8rem;
-    }
-  }
-
-  .set-02 {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 20rem 1fr;
-    padding: 4rem 2rem;
 
     header {
+      height: 20rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -118,19 +50,76 @@ main {
       }
     }
 
-    .set-02-body {
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .theme-btn {
+        background-color: transparent;
+        border: none;
+        color: var(--font-colour);
+        font-size: 2.8rem;
+        margin-right: 2rem;
+      }
+    }
+
+    .app-body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
 
-      ul {
-        font-family: var(--app-font-content) !important;
-        list-style: none;
+    .home-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.4rem;
+
+      h3 {
+        font-size: 6.4rem;
+        line-height: 6.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        text-wrap: nowrap;
+      }
+
+      p {
+        font-size: 1.8rem;
+        text-align: center;
+        max-width: 120rem;
+        line-height: 3rem;
+      }
+
+      .icons {
         display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        font-size: 1.6rem;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.8rem;
+        margin-top: 1rem;
+
+        a {
+          @include blurLayer($bdrRds: 1.2rem);
+          color: var(--font-colour);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          font-weight: 500;
+          letter-spacing: 0.1rem;
+          margin-bottom: 0.4rem;
+          padding: 0.6rem 1.8rem 0.6rem 1rem;
+          border-radius: 0.6rem;
+          text-decoration: none;
+
+          img {
+            width: 2rem;
+          }
+        }
       }
     }
 
@@ -288,7 +277,6 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
         flex-shrink: 0;
         position: relative;
 
@@ -459,7 +447,7 @@ main {
       }
     }
 
-    .set-02 {
+    .app-component {
       grid-template-rows: auto 1fr;
       padding: 4rem 2rem;
 
@@ -505,7 +493,7 @@ main {
       }
     }
 
-    .set-02 {
+    .app-component {
       grid-template-rows: 14rem 1fr;
       padding: 2rem !important;
 
