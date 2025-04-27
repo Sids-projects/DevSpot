@@ -13,6 +13,14 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+body.dark-mode::after {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode::after {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 main {
   .app-component {
     height: 100vh;
