@@ -9,6 +9,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 main {
   .app-component {
     height: 100vh;
@@ -494,7 +498,6 @@ main {
     }
 
     .app-component {
-      grid-template-rows: 14rem 1fr;
       padding: 2rem !important;
 
       header {
