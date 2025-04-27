@@ -10,31 +10,23 @@ body {
 }
 
 main {
-  width: 100%;
-  height: 100dvh;
-  overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
   .app-home,
   .set-02 {
     transition: transform 0.8s ease, filter 0.8s ease, opacity 0.8s ease;
     will-change: transform, filter, opacity;
     transform: scale(1);
+    filter: blur(0);
     opacity: 1;
 
     &.inactive {
       transform: scale(0.7);
-      opacity: 0.1;
+      filter: blur(10px);
+      opacity: 0.3;
     }
   }
 
   .app-home {
-    height: 100%;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,7 +91,7 @@ main {
   }
 
   .set-02 {
-    height: 100%;
+    height: 100dvh;
     display: grid;
     grid-template-rows: 20rem 1fr;
     padding: 4rem 2rem;
@@ -143,7 +135,6 @@ main {
     }
 
     .about-container {
-      height: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2.6rem;
@@ -280,32 +271,26 @@ main {
     }
 
     .project-container {
-      width: 100%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      align-items: center;
-      justify-content: space-evenly;
+      width: 90dvw;
+      display: flex;
+      flex-direction: row;
       gap: 2rem;
+      overflow-y: auto;
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
 
       .project-content {
         @include blurLayer($bdrRds: 1.2rem);
         padding: 4rem 1.8rem 1.8rem 1.8rem;
         width: 34rem;
-        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        flex-shrink: 0;
         position: relative;
-
-        &:nth-child(1) {
-          margin-top: 10rem;
-        }
-
-        &:nth-child(2) {
-          margin-bottom: 10rem;
-        }
-
-        &:nth-child(3) {
-          margin-top: 10rem;
-        }
 
         img {
           width: 5rem;
@@ -352,8 +337,19 @@ main {
       }
     }
 
+    .project-arrows {
+      width: 90dvw;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2rem;
+
+      p {
+        font-size: 3.8rem;
+      }
+    }
+
     .qualify-container {
-      height: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
@@ -427,12 +423,6 @@ main {
 
 @media only screen and (max-width: 1110px) {
   .project-container {
-    width: fit-content !important;
-    height: fit-content !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 3rem !important;
-
     .project-content {
       width: 34rem;
       margin: 0 !important;
@@ -488,8 +478,6 @@ main {
     }
 
     .app-projects {
-      height: 150dvh !important;
-
       .project-content {
         margin: 0 !important;
       }

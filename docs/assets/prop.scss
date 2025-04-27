@@ -93,6 +93,9 @@ $layerClr03: rgba(255, 255, 255, 0.097);
       transparent 60.78034528031442%
     );
   background-blend-mode: overlay, overlay, normal, normal, hue, normal;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @mixin darkMode() {
@@ -105,6 +108,9 @@ $layerClr03: rgba(255, 255, 255, 0.097);
     radial-gradient(at 38% 77%, #332f0e 0px, transparent 50%) #000000;
   mix-blend-mode: var(--_mesh-gradient-blend-mode);
   filter: blur(var(--_mesh-gradient-blur));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .light-mode {

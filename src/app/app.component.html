@@ -143,7 +143,7 @@
     </header>
 
     <div class="set-02-body">
-      <div class="project-container">
+      <div class="project-container" #projectContainer>
         <div class="project-content">
           <img src="./assets/pin.svg" alt="Pin Vector" />
           <small>01</small>
@@ -196,6 +196,30 @@
             <a href="https://travellerspond.com/web" target="_blank">Live</a>
           </div>
         </div>
+
+        <div class="project-content">
+          <img src="./assets/pin.svg" alt="Pin Vector" />
+          <small>04</small>
+          <h3 class="highlight">🎨 StyleDocs</h3>
+          <p>A lightweight Angular utility library.</p>
+          <p>
+            It's like a little style toolkit — plug it into any project and
+            build with ready-made classes. Handy when you want less CSS clutter
+            and more styling freedom.
+          </p>
+          <div class="project-content-btns">
+            <a
+              href="http://fe-content.s3.ap-south-1.amazonaws.com/styledocs/index.html"
+              target="_blank"
+              >Live</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-arrows">
+        <p (click)="scrollLeft()">◀️</p>
+        <p (click)="scrollRight()">▶️</p>
       </div>
     </div>
   </section>

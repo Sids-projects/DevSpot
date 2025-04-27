@@ -5,6 +5,7 @@ import {
   OnInit,
   QueryList,
   ViewChildren,
+  ViewChild,
 } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -17,6 +18,8 @@ import { BehaviorSubject } from 'rxjs';
 export class AppComponent implements OnInit {
   currecntComp: string = 'home';
   @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
+  @ViewChild('projectContainer', { static: false })
+  projectContainer!: ElementRef<HTMLDivElement>;
   isDarkMode = false;
   newTheme!: string;
   screenWidth: number = window.innerWidth;
@@ -82,5 +85,19 @@ export class AppComponent implements OnInit {
   toggleTheme(): void {
     this.newTheme = this.isDarkMode ? 'light-mode' : 'dark-mode';
     this.setTheme(this.newTheme);
+  }
+
+  scrollLeft() {
+    this.projectContainer.nativeElement.scrollBy({
+      left: -400, // You can adjust how much to scroll
+      behavior: 'smooth',
+    });
+  }
+
+  scrollRight() {
+    this.projectContainer.nativeElement.scrollBy({
+      left: 400, // Positive value to scroll right
+      behavior: 'smooth',
+    });
   }
 }
