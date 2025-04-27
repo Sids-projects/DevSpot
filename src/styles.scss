@@ -434,16 +434,16 @@ main {
 @media only screen and (max-width: 980px) {
   main {
     .app-home {
-      gap: 1.4rem;
-      padding: 2rem;
+      gap: 1.4rem !important;
+      padding: 2rem !important;
 
       h3 {
-        font-size: 4.4rem;
-        line-height: 4.8rem;
+        font-size: 4.4rem !important;
+        line-height: 4.8rem !important;
       }
 
       p {
-        font-size: 1.6rem;
+        font-size: 1.6rem !important;
       }
     }
 
@@ -477,18 +477,18 @@ main {
   main {
     .app-home {
       h3 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 1rem;
-        font-size: 3.6rem;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 1rem !important;
+        font-size: 3.6rem !important;
 
         span {
-          text-wrap: nowrap;
-          font-size: 4.2rem;
-          line-height: 4.4rem;
+          text-wrap: nowrap !important;
+          font-size: 4.2rem !important;
+          line-height: 4.4rem !important;
         }
       }
     }
