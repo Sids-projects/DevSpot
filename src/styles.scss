@@ -39,7 +39,7 @@ main {
   }
 
   .app-home {
-    height: 100dvh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,7 +104,7 @@ main {
   }
 
   .set-02 {
-    height: 100dvh;
+    height: 100%;
     display: grid;
     grid-template-rows: 20rem 1fr;
     padding: 4rem 2rem;
@@ -461,7 +461,6 @@ main {
 @media only screen and (max-width: 980px) {
   main {
     .app-home {
-      height: 100dvh;
       gap: 1.4rem;
       padding: 2rem;
 

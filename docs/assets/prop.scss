@@ -206,7 +206,7 @@ app-root,
   display: inline-block;
   overflow: hidden;
   border-right: 0.15em solid var(--theme-colour);
-  white-space: normal; /* important: allow wrapping */
+  white-space: normal;
   animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
@@ -215,7 +215,7 @@ app-root,
     width: 0ch;
   }
   to {
-    width: 40ch; /* approximate number of characters */
+    width: 40ch;
   }
 }
 
