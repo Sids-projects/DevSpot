@@ -24,17 +24,12 @@ main {
   .set-02 {
     transition: transform 0.8s ease, filter 0.8s ease, opacity 0.8s ease;
     will-change: transform, filter, opacity;
-    opacity: 1;
     transform: scale(1);
-    filter: blur(0);
-    position: relative;
-    z-index: 1;
+    opacity: 1;
 
     &.inactive {
       transform: scale(0.7);
-      filter: blur(10px);
-      opacity: 0.3;
-      z-index: 0;
+      opacity: 0.1;
     }
   }
 
