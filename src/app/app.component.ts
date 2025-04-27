@@ -18,6 +18,7 @@ import { BehaviorSubject } from 'rxjs';
 export class AppComponent implements OnInit {
   currecntComp: string = 'home';
   @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
+  @ViewChild('mainRef', { static: false }) mainRef!: ElementRef<HTMLElement>;
   @ViewChild('projectContainer', { static: false })
   projectContainer!: ElementRef<HTMLDivElement>;
   isDarkMode = false;
@@ -41,6 +42,11 @@ export class AppComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
+    const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+    if (this.mainRef) {
+      this.mainRef.nativeElement.classList.add(savedTheme);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -74,8 +80,8 @@ export class AppComponent implements OnInit {
 
   setTheme(theme: string): void {
     const oldTheme = this.isDarkMode ? 'dark-mode' : 'light-mode';
-    document.body.classList.remove(oldTheme);
-    document.body.classList.add(theme);
+    this.mainRef.nativeElement.classList.remove(oldTheme);
+    this.mainRef.nativeElement.classList.add(theme);
     this.isDarkMode = theme === 'dark-mode';
 
     this.theme.next(theme);
