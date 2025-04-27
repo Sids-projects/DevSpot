@@ -1,5 +1,5 @@
 <main>
-  <section class="app-home">
+  <section class="app-home" #sectionRef>
     <button class="theme-btn" (click)="toggleTheme()">
       <span *ngIf="isDarkMode == false">🌞</span>
       <span *ngIf="isDarkMode == true">🌙</span>
@@ -29,7 +29,7 @@
     </div>
   </section>
 
-  <section class="set-02 app-about">
+  <section class="set-02 app-about" #sectionRef>
     <header>
       <h2>🧰 What I Use & How I Build</h2>
       <p>
@@ -65,7 +65,7 @@
     </div>
   </section>
 
-  <section class="set-02 app-experience">
+  <section class="set-02 app-experience" #sectionRef>
     <header>
       <h2>🧠 My Journey So Far</h2>
       <p>From curious clicks to clean code — here's where I've been.</p>
@@ -99,7 +99,7 @@
     </div>
   </section>
 
-  <section class="set-02 app-qualify">
+  <section class="set-02 app-qualify" #sectionRef>
     <header>
       <h2>🏫 A Bit of Background</h2>
       <p>
@@ -136,7 +136,7 @@
     </div>
   </section>
 
-  <section class="set-02 app-projects">
+  <section class="set-02 app-projects" #sectionRef>
     <header>
       <h2>🧪 Projects</h2>
       <p>Stuff I've built — ideas turned into things you can click.</p>
@@ -224,7 +224,7 @@
     </div>
   </section>
 
-  <section class="set-02 app-contact">
+  <section class="set-02 app-contact" #sectionRef>
     <header>
       <h2>📮 Say Hello</h2>
       <p>
